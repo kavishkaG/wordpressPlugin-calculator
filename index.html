@@ -20,7 +20,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
                 <div class="card" style="margin-bottom: 2rem;">
                     <div class="card-header" style="background-color: #626262; color: white;">
                         <strong>STEP 01 - ADD PC & SERVER</strong>
@@ -36,11 +36,11 @@
                                 <div id="desktopCount"></div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" style="text-align: center;">
-                                <button class="btn btn-primary btn-sm" type="submit"><i
+                                <button class="btn btn-primary btn-sm" type="submit" onclick="minusDesktop()"><i
                                         class="fa fa-minus"></i></button>
                                 <input type="range" class="custom-range" value="0" min="0" max="25" step="1"
                                     id="desktops">
-                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus"></i></button>
+                                <button class="btn btn-primary btn-sm" type="submit" onclick="plusDesktop()"><i class="fa fa-plus"></i></button>
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 2rem;">
@@ -53,11 +53,11 @@
                                 <div id="laptopCount"></div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" style="text-align: center;">
-                                <button class="btn btn-primary btn-sm" type="submit"><i
+                                <button class="btn btn-primary btn-sm" type="submit" onclick="minusLaptop()"><i
                                         class="fa fa-minus"></i></button>
                                 <input type="range" class="custom-range" value="0" min="0" max="25" step="1"
                                     id="laptops">
-                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus"></i></button>
+                                <button class="btn btn-primary btn-sm" type="submit" onclick="plusLaptop()"><i class="fa fa-plus"></i></button>
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 2rem;">
@@ -70,11 +70,11 @@
                                 <div id="serverCount"></div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" style="text-align: center;">
-                                <button class="btn btn-primary btn-sm" type="submit"><i
+                                <button class="btn btn-primary btn-sm" type="submit" onclick="minusServer()"><i
                                         class="fa fa-minus"></i></button>
                                 <input type="range" class="custom-range" value="0" min="0" max="25" step="1"
                                     id="servers">
-                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus"></i></button>
+                                <button class="btn btn-primary btn-sm" type="submit" onclick="plusServer()"><i class="fa fa-plus"></i></button>
                             </div>
                         </div>
                     </div>
@@ -170,17 +170,17 @@
                                 <div id="pcContinutyCount"></div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" style="text-align: center;">
-                                <button class="btn btn-primary btn-sm" type="submit"><i
+                                <button class="btn btn-primary btn-sm" type="submit" onclick="minusPcContinuty()"><i
                                         class="fa fa-minus"></i></button>
                                 <input type="range" class="custom-range" value="0" min="0" max="25" step="1"
                                     id="pcContinuty">
-                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus"></i></button>
+                                <button class="btn btn-primary btn-sm" type="submit" onclick="plusPcContinuty()"><i class="fa fa-plus"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                 <div class="card">
                     <div class="card-header" style="background-color: #626262; color: white;">
                         <strong>PRICE DETAILS</strong>
@@ -228,19 +228,14 @@
                         </div>
                         </p>
                     </div>
-                    <div class="card-footer" style="background-color: #b8b8b8; color: white;">
-                        <div class="row">
-                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
-                                <!-- <h5>TOTAL COST</h5> -->
-                            </div>
-                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                <h3 id="totalCost" style="float: right;"></h3>
-                            </div>
-                        </div>
+                    <div class="card-footer" style="background-color: #b8b8b8; color: white; text-align: center;">
+                        <h7>TOTAL COST</h7>
+                        <h3 id="totalCost"></h3>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -275,15 +270,15 @@
 
             var pcContinutyCount = parseInt($('#pcContinuty').val());
             var pcContinutyPrice = 15;
-            
+
             var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
 
-            var totalCost =  pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
 
             var desktopIconList = "", i;
 
             for (i = 1; i <= desktopCount; i++) {
-                desktopIconList = desktopIconList + "<img src=\"https://img.icons8.com/cute-clipart/20/000000/developer-mode.png\"/>";
+                desktopIconList = desktopIconList + "<img src=\"https://img.icons8.com/cute-clipart/25/000000/developer-mode.png\"/>";
             }
             document.getElementById("desktopCount").innerHTML = desktopIconList;
 
@@ -295,7 +290,7 @@
 
             var monAndAlertIconList = "", x;
             for (x = 1; x <= pcCount; x++) {
-                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/20/000000/developer-mode.png\"/>";
+                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/25/000000/developer-mode.png\"/>";
             }
             document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
 
@@ -307,7 +302,7 @@
 
             document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = totalCost + ".00";
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
         });
 
         $('#laptops').change(function () {
@@ -329,10 +324,10 @@
 
             var pcContinutyCount = parseInt($('#pcContinuty').val());
             var pcContinutyPrice = 15;
-            
+
             var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
 
-            var totalCost =  pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
 
             var laptopIconList = "", i;
             for (i = 1; i <= laptopCount; i++) {
@@ -360,14 +355,14 @@
 
             document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = totalCost + ".00";
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
         });
 
         $('#servers').change(function () {
             var serverCount = parseInt($(this).val());
             var serverAntiVirousPrice = 6;
             var serverMonAndAlertPrice = 20;
-            
+
             var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
             var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
 
@@ -382,10 +377,10 @@
 
             var pcContinutyCount = parseInt($('#pcContinuty').val());
             var pcContinutyPrice = 15;
-            
+
             var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
 
-            var totalCost =  pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
 
             var serverIconList = "", i;
             for (i = 1; i <= serverCount; i++) {
@@ -412,8 +407,8 @@
             document.getElementById("serverMonAndAlertName").innerHTML = "SERVER - MONITORING & ALERT";
 
             document.getElementById("serverMonAndAlertPrice").innerHTML = serverMonAndAlertTotalPrice + ".00";
-            
-            document.getElementById("totalCost").innerHTML = totalCost + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
         });
 
         $('#pcContinuty').change(function () {
@@ -425,7 +420,7 @@
             var serverCount = parseInt($('#servers').val());
             var serverAntiVirousPrice = 6;
             var serverMonAndAlertPrice = 20;
-            
+
             var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
             var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
 
@@ -438,7 +433,7 @@
             var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
             var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
 
-            var totalCost =  pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
 
             var pcContinutyIconList = "", i;
             for (i = 1; i <= pcContinutyCount; i++) {
@@ -449,9 +444,411 @@
             document.getElementById("pcContinutyName").innerHTML = "PC BUSINES CONTINUITY";
 
             document.getElementById("pcContinutyPrice").innerHTML = pcContinutyCountTotalPrice + ".00";
-            
-            document.getElementById("totalCost").innerHTML = totalCost + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
         });
+
+        function minusDesktop(){
+            $("#desktops").val(parseInt($("#desktops").val()) - 1);
+            var desktopCount = parseInt($('#desktops').val());
+            var laptopCount = parseInt($('#laptops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            var serverCount = parseInt($('#servers').val());
+            var serverAntiVirousPrice = 6;
+            var serverMonAndAlertPrice = 20;
+
+            var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
+            var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
+
+            var pcContinutyCount = parseInt($('#pcContinuty').val());
+            var pcContinutyPrice = 15;
+
+            var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+
+            var desktopIconList = "", i;
+
+            for (i = 1; i <= desktopCount; i++) {
+                desktopIconList = desktopIconList + "<img src=\"https://img.icons8.com/cute-clipart/25/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("desktopCount").innerHTML = desktopIconList;
+
+            var pcAntivirusIconList = "", j;
+            for (j = 1; j <= pcCount; j++) {
+                pcAntivirusIconList = pcAntivirusIconList + "<i class=\"fa fa-desktop\"></i>" + " ";
+            }
+            document.getElementById("pcAntiVirus").innerHTML = pcAntivirusIconList;
+
+            var monAndAlertIconList = "", x;
+            for (x = 1; x <= pcCount; x++) {
+                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/25/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
+
+            document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
+
+            document.getElementById("pcAntiVirusPrice").innerHTML = pcAntiVirusTotalPrice + ".00";
+
+            document.getElementById("pcMonAndAlertName").innerHTML = "PC - MONITORING & ALERT";
+
+            document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+        }
+
+        function plusDesktop(){
+            $("#desktops").val(parseInt($("#desktops").val()) + 1);
+            var desktopCount = parseInt($('#desktops').val());
+            var laptopCount = parseInt($('#laptops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            var serverCount = parseInt($('#servers').val());
+            var serverAntiVirousPrice = 6;
+            var serverMonAndAlertPrice = 20;
+
+            var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
+            var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
+
+            var pcContinutyCount = parseInt($('#pcContinuty').val());
+            var pcContinutyPrice = 15;
+
+            var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+
+            var desktopIconList = "", i;
+
+            for (i = 1; i <= desktopCount; i++) {
+                desktopIconList = desktopIconList + "<img src=\"https://img.icons8.com/cute-clipart/25/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("desktopCount").innerHTML = desktopIconList;
+
+            var pcAntivirusIconList = "", j;
+            for (j = 1; j <= pcCount; j++) {
+                pcAntivirusIconList = pcAntivirusIconList + "<i class=\"fa fa-desktop\"></i>" + " ";
+            }
+            document.getElementById("pcAntiVirus").innerHTML = pcAntivirusIconList;
+
+            var monAndAlertIconList = "", x;
+            for (x = 1; x <= pcCount; x++) {
+                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/25/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
+
+            document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
+
+            document.getElementById("pcAntiVirusPrice").innerHTML = pcAntiVirusTotalPrice + ".00";
+
+            document.getElementById("pcMonAndAlertName").innerHTML = "PC - MONITORING & ALERT";
+
+            document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+        }
+
+        function minusLaptop(){
+            $("#laptops").val(parseInt($("#laptops").val()) - 1);
+            var desktopCount = parseInt($('#desktops').val());
+            var laptopCount = parseInt($('#laptops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            var serverCount = parseInt($('#servers').val());
+            var serverAntiVirousPrice = 6;
+            var serverMonAndAlertPrice = 20;
+
+            var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
+            var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
+
+            var pcContinutyCount = parseInt($('#pcContinuty').val());
+            var pcContinutyPrice = 15;
+
+            var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+
+            var laptopIconList = "", i;
+            for (i = 1; i <= laptopCount; i++) {
+                laptopIconList = laptopIconList + "<i class=\"fa fa-laptop\"></i>" + " ";
+            }
+            document.getElementById("laptopCount").innerHTML = laptopIconList;
+
+            var pcAntivirusIconList = "", j;
+            for (j = 1; j <= pcCount; j++) {
+                pcAntivirusIconList = pcAntivirusIconList + "<i class=\"fa fa-desktop\"></i>" + " ";
+            }
+            document.getElementById("pcAntiVirus").innerHTML = pcAntivirusIconList;
+
+            var monAndAlertIconList = "", x;
+            for (x = 1; x <= pcCount; x++) {
+                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/20/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
+
+            document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
+
+            document.getElementById("pcAntiVirusPrice").innerHTML = pcAntiVirusTotalPrice + ".00";
+
+            document.getElementById("pcMonAndAlertName").innerHTML = "PC - MONITORING & ALERT";
+
+            document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+        }
+
+        function plusLaptop(){
+            $("#laptops").val(parseInt($("#laptops").val()) + 1);
+            var desktopCount = parseInt($('#desktops').val());
+            var laptopCount = parseInt($('#laptops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            var serverCount = parseInt($('#servers').val());
+            var serverAntiVirousPrice = 6;
+            var serverMonAndAlertPrice = 20;
+
+            var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
+            var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
+
+            var pcContinutyCount = parseInt($('#pcContinuty').val());
+            var pcContinutyPrice = 15;
+
+            var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+
+            var laptopIconList = "", i;
+            for (i = 1; i <= laptopCount; i++) {
+                laptopIconList = laptopIconList + "<i class=\"fa fa-laptop\"></i>" + " ";
+            }
+            document.getElementById("laptopCount").innerHTML = laptopIconList;
+
+            var pcAntivirusIconList = "", j;
+            for (j = 1; j <= pcCount; j++) {
+                pcAntivirusIconList = pcAntivirusIconList + "<i class=\"fa fa-desktop\"></i>" + " ";
+            }
+            document.getElementById("pcAntiVirus").innerHTML = pcAntivirusIconList;
+
+            var monAndAlertIconList = "", x;
+            for (x = 1; x <= pcCount; x++) {
+                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/20/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
+
+            document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
+
+            document.getElementById("pcAntiVirusPrice").innerHTML = pcAntiVirusTotalPrice + ".00";
+
+            document.getElementById("pcMonAndAlertName").innerHTML = "PC - MONITORING & ALERT";
+
+            document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+        }
+
+        function minusServer(){
+            $("#servers").val(parseInt($("#servers").val()) - 1);
+            var serverCount = parseInt($('#servers').val());
+            var serverAntiVirousPrice = 6;
+            var serverMonAndAlertPrice = 20;
+
+            var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
+            var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
+
+            var laptopCount = parseInt($('#laptops').val());
+            var desktopCount = parseInt($('#desktops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            var pcContinutyCount = parseInt($('#pcContinuty').val());
+            var pcContinutyPrice = 15;
+
+            var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+
+            var serverIconList = "", i;
+            for (i = 1; i <= serverCount; i++) {
+                serverIconList = serverIconList + "<i class=\"fa fa-server\"></i>" + " ";
+            }
+            document.getElementById("serverCount").innerHTML = serverIconList;
+
+            var serverAntivirusIconList = "", j;
+            for (j = 1; j <= serverCount; j++) {
+                serverAntivirusIconList = serverAntivirusIconList + "<i class=\"fa fa-server\"></i>" + " ";
+            }
+            document.getElementById("serverAntiVirus").innerHTML = serverAntivirusIconList;
+
+            var monAndAlertIconList = "", x;
+            for (x = 1; x <= serverCount; x++) {
+                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/20/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("serverMonAndAlert").innerHTML = monAndAlertIconList;
+
+            document.getElementById("serverAntiVirusName").innerHTML = "SERVER - ANITIVIRUS";
+
+            document.getElementById("serverAntiVirusPrice").innerHTML = serverAntiVirusTotalPrice + ".00";
+
+            document.getElementById("serverMonAndAlertName").innerHTML = "SERVER - MONITORING & ALERT";
+
+            document.getElementById("serverMonAndAlertPrice").innerHTML = serverMonAndAlertTotalPrice + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+        }
+
+        function plusServer(){
+            $("#servers").val(parseInt($("#servers").val()) + 1);
+            var serverCount = parseInt($('#servers').val());
+            var serverAntiVirousPrice = 6;
+            var serverMonAndAlertPrice = 20;
+
+            var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
+            var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
+
+            var laptopCount = parseInt($('#laptops').val());
+            var desktopCount = parseInt($('#desktops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            var pcContinutyCount = parseInt($('#pcContinuty').val());
+            var pcContinutyPrice = 15;
+
+            var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+
+            var serverIconList = "", i;
+            for (i = 1; i <= serverCount; i++) {
+                serverIconList = serverIconList + "<i class=\"fa fa-server\"></i>" + " ";
+            }
+            document.getElementById("serverCount").innerHTML = serverIconList;
+
+            var serverAntivirusIconList = "", j;
+            for (j = 1; j <= serverCount; j++) {
+                serverAntivirusIconList = serverAntivirusIconList + "<i class=\"fa fa-server\"></i>" + " ";
+            }
+            document.getElementById("serverAntiVirus").innerHTML = serverAntivirusIconList;
+
+            var monAndAlertIconList = "", x;
+            for (x = 1; x <= serverCount; x++) {
+                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/20/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("serverMonAndAlert").innerHTML = monAndAlertIconList;
+
+            document.getElementById("serverAntiVirusName").innerHTML = "SERVER - ANITIVIRUS";
+
+            document.getElementById("serverAntiVirusPrice").innerHTML = serverAntiVirusTotalPrice + ".00";
+
+            document.getElementById("serverMonAndAlertName").innerHTML = "SERVER - MONITORING & ALERT";
+
+            document.getElementById("serverMonAndAlertPrice").innerHTML = serverMonAndAlertTotalPrice + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+        }
+
+        function minusPcContinuty(){
+            $("#pcContinuty").val(parseInt($("#pcContinuty").val()) - 1);
+            var pcContinutyCount = parseInt($('#pcContinuty').val());
+            var pcContinutyPrice = 15;
+
+            var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            var serverCount = parseInt($('#servers').val());
+            var serverAntiVirousPrice = 6;
+            var serverMonAndAlertPrice = 20;
+
+            var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
+            var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
+
+            var laptopCount = parseInt($('#laptops').val());
+            var desktopCount = parseInt($('#desktops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+
+            var pcContinutyIconList = "", i;
+            for (i = 1; i <= pcContinutyCount; i++) {
+                pcContinutyIconList = pcContinutyIconList + "<i class=\"fa fa-server\"></i>" + " ";
+            }
+            document.getElementById("pcContinutyCount").innerHTML = pcContinutyIconList;
+
+            document.getElementById("pcContinutyName").innerHTML = "PC BUSINES CONTINUITY";
+
+            document.getElementById("pcContinutyPrice").innerHTML = pcContinutyCountTotalPrice + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            }
+
+        function plusPcContinuty(){
+            $("#pcContinuty").val(parseInt($("#pcContinuty").val()) + 1);
+            var pcContinutyCount = parseInt($('#pcContinuty').val());
+            var pcContinutyPrice = 15;
+
+            var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            var serverCount = parseInt($('#servers').val());
+            var serverAntiVirousPrice = 6;
+            var serverMonAndAlertPrice = 20;
+
+            var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
+            var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
+
+            var laptopCount = parseInt($('#laptops').val());
+            var desktopCount = parseInt($('#desktops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice;
+
+            var pcContinutyIconList = "", i;
+            for (i = 1; i <= pcContinutyCount; i++) {
+                pcContinutyIconList = pcContinutyIconList + "<i class=\"fa fa-server\"></i>" + " ";
+            }
+            document.getElementById("pcContinutyCount").innerHTML = pcContinutyIconList;
+
+            document.getElementById("pcContinutyName").innerHTML = "PC BUSINES CONTINUITY";
+
+            document.getElementById("pcContinutyPrice").innerHTML = pcContinutyCountTotalPrice + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            }
 
     </script>
 </body>
