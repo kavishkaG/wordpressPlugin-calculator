@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .container {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="card" style="margin-bottom: 2rem;">
+                    <div class="card-header" style="background-color: #626262; color: white;">
+                        <strong>STEP 01 - ADD PC & SERVER</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" style="margin-bottom: 2rem;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                                <h5 class="card-title">WORKSTATION - DESKTOP</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3" style="text-align: left;">
+                                <div id="desktopCount"></div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" style="text-align: center;">
+                                <button class="btn btn-primary btn-sm" type="submit"><i
+                                        class="fa fa-minus"></i></button>
+                                <input type="range" class="custom-range" value="0" min="0" max="25" step="1"
+                                    id="desktops">
+                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 2rem;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                                <h5 class="card-title">WORKSTATION - LAPTOP</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3" style="text-align: left;">
+                                <div id="laptopCount"></div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" style="text-align: center;">
+                                <button class="btn btn-primary btn-sm" type="submit"><i
+                                        class="fa fa-minus"></i></button>
+                                <input type="range" class="custom-range" value="0" min="0" max="25" step="1"
+                                    id="laptops">
+                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 2rem;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                                <h5 class="card-title">SERVERS</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3" style="text-align: left;">
+                                <div id="serverCount"></div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" style="text-align: center;">
+                                <button class="btn btn-primary btn-sm" type="submit"><i
+                                        class="fa fa-minus"></i></button>
+                                <input type="range" class="custom-range" value="0" min="0" max="25" step="1"
+                                    id="servers">
+                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="margin-bottom: 2rem;">
+                    <div class="card-header" style="background-color: #626262; color: white;">
+                        <strong>STEP 02 - ADD SERVICES</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" style="margin-bottom: 2rem;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                                <h5 class="card-title">PC - ANITIVIRUS</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7" style="text-align: left;">
+                                <div id="pcAntiVirus"></div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 2rem;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                                <h5 class="card-title">SERVER - ANITIVIRUS</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7" style="text-align: left;">
+                                <div id="serverAntiVirus"></div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 2rem;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                                <h5 class="card-title">PC - MONITORING & ALERT</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7" style="text-align: left;">
+                                <div id="pcMonAndAlert"></div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 2rem;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                                <h5 class="card-title">SERVER - MONITORING & ALERT</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7" style="text-align: left;">
+                                <div id="serverMonAndAlert"></div>
+                            </div>
+                        </div>
+                        <!-- <div class="row" style="margin-bottom: 2rem;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                                <h5 class="card-title">CLIENT PORTAL</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2" style="text-align: left;">
+                                <i class="fa fa-server"></i>
+                                <i class="fa fa-server"></i>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="text-align: center;">
+                                <button class="btn btn-primary btn-sm" type="submit"><i
+                                        class="fa fa-minus"></i></button>
+                                <input type="range" class="custom-range" value="0" min="0" max="25" step="1"
+                                    id="servers">
+                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 2rem;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                                <h5 class="card-title">MONTHLY REPORTS</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2" style="text-align: left;">
+                                <i class="fa fa-server"></i>
+                                <i class="fa fa-server"></i>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="text-align: center;">
+                                <button class="btn btn-primary btn-sm" type="submit"><i
+                                        class="fa fa-minus"></i></button>
+                                <input type="range" class="custom-range" value="0" min="0" max="25" step="1"
+                                    id="servers">
+                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div> -->
+                        <div class="row" style="margin-bottom: 2rem;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                                <h5 class="card-title">PC BUSINES CONTINUTY</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3" style="text-align: left;">
+                                <div id="pcContinutyCount"></div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" style="text-align: center;">
+                                <button class="btn btn-primary btn-sm" type="submit"><i
+                                        class="fa fa-minus"></i></button>
+                                <input type="range" class="custom-range" value="0" min="0" max="25" step="1"
+                                    id="pcContinuty">
+                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card">
+                    <div class="card-header" style="background-color: #626262; color: white;">
+                        <strong>PRICE DETAILS</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                <p id="pcAntiVirusName"></p>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                <p id="pcAntiVirusPrice" style="float: right;"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                <p id="serverAntiVirusName"></p>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                <p id="serverAntiVirusPrice" style="float: right;"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                <p id="pcMonAndAlertName"></p>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                <p id="pcMonAndAlertPrice" style="float: right;"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                <p id="serverMonAndAlertName"></p>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                <p id="serverMonAndAlertPrice" style="float: right;"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                <p id="pcContinutyName"></p>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                <p id="pcContinutyPrice" style="float: right;"></p>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        $('#desktops').change(function () {
+            var desktopCount = parseInt($(this).val());
+            var laptopCount = parseInt($('#laptops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+            var desktopIconList = "", i;
+
+            for (i = 1; i <= desktopCount; i++) {
+                desktopIconList = desktopIconList + "<img src=\"https://img.icons8.com/cute-clipart/20/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("desktopCount").innerHTML = desktopIconList;
+
+            var pcAntivirusIconList = "", j;
+            for (j = 1; j <= pcCount; j++) {
+                pcAntivirusIconList = pcAntivirusIconList + "<i class=\"fa fa-desktop\"></i>" + " ";
+            }
+            document.getElementById("pcAntiVirus").innerHTML = pcAntivirusIconList;
+
+            var monAndAlertIconList = "", x;
+            for (x = 1; x <= pcCount; x++) {
+                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/20/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
+
+            document.getElementById("pcAntiVirusPrice").innerHTML = pcAntiVirusTotalPrice + ".00";
+
+            document.getElementById("pcMonAndAlertName").innerHTML = "PC - MONITORING & ALERT";
+
+            document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
+        });
+
+        $('#laptops').change(function () {
+            var laptopCount = parseInt($(this).val());
+            var desktopCount = parseInt($('#desktops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+            var laptopIconList = "", i;
+            for (i = 1; i <= laptopCount; i++) {
+                laptopIconList = laptopIconList + "<i class=\"fa fa-laptop\"></i>" + " ";
+            }
+            document.getElementById("laptopCount").innerHTML = laptopIconList;
+
+            var pcAntivirusIconList = "", j;
+            for (j = 1; j <= pcCount; j++) {
+                pcAntivirusIconList = pcAntivirusIconList + "<i class=\"fa fa-desktop\"></i>" + " ";
+            }
+            document.getElementById("pcAntiVirus").innerHTML = pcAntivirusIconList;
+
+            var monAndAlertIconList = "", x;
+            for (x = 1; x <= pcCount; x++) {
+                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/20/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
+
+            document.getElementById("pcAntiVirusPrice").innerHTML = pcAntiVirusTotalPrice + ".00";
+
+            document.getElementById("pcMonAndAlertName").innerHTML = "PC - MONITORING & ALERT";
+
+            document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
+        });
+
+        $('#servers').change(function () {
+            var serverCount = parseInt($(this).val());
+            var serverAntiVirousPrice = 6;
+            var serverMonAndAlertPrice = 20;
+
+            var serverIconList = "", i;
+            for (i = 1; i <= serverCount; i++) {
+                serverIconList = serverIconList + "<i class=\"fa fa-server\"></i>" + " ";
+            }
+            document.getElementById("serverCount").innerHTML = serverIconList;
+
+            var serverAntivirusIconList = "", j;
+            for (j = 1; j <= serverCount; j++) {
+                serverAntivirusIconList = serverAntivirusIconList + "<i class=\"fa fa-server\"></i>" + " ";
+            }
+            document.getElementById("serverAntiVirus").innerHTML = serverAntivirusIconList;
+
+            var monAndAlertIconList = "", x;
+            for (x = 1; x <= serverCount; x++) {
+                monAndAlertIconList = monAndAlertIconList + "<img src=\"https://img.icons8.com/cute-clipart/20/000000/developer-mode.png\"/>";
+            }
+            document.getElementById("serverMonAndAlert").innerHTML = monAndAlertIconList;
+
+            var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
+            var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
+
+            document.getElementById("serverAntiVirusName").innerHTML = "SERVER - ANITIVIRUS";
+
+            document.getElementById("serverAntiVirusPrice").innerHTML = serverAntiVirusTotalPrice + ".00";
+
+            document.getElementById("serverMonAndAlertName").innerHTML = "SERVER - MONITORING & ALERT";
+
+            document.getElementById("serverMonAndAlertPrice").innerHTML = serverMonAndAlertTotalPrice + ".00";
+        });
+
+        $('#pcContinuty').change(function () {
+            var pcContinutyCount = parseInt($(this).val());
+            var pcContinutyPrice = 15;
+
+            var pcContinutyIconList = "", i;
+            for (i = 1; i <= pcContinutyCount; i++) {
+                pcContinutyIconList = pcContinutyIconList + "<i class=\"fa fa-server\"></i>" + " ";
+            }
+            document.getElementById("pcContinutyCount").innerHTML = pcContinutyIconList;
+
+            var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            document.getElementById("pcContinutyName").innerHTML = "PC BUSINES CONTINUITY";
+
+            document.getElementById("pcContinutyPrice").innerHTML = pcContinutyCountTotalPrice + ".00";
+        });
+
+    </script>
+</body>
+
+</html>
