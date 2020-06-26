@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Calculator">
     <title>Calculator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -346,103 +347,239 @@
                     </div>
                     <div class="card-body" style="background-color: #f1f4f8;">
 
-                        <form id="gform" method="POST" class="pure-form pure-form-stacked"
-                            data-email="from_email@example.com"
-                            action="https://script.google.com/macros/s/AKfycbwxcJPjoAmLpO5wla1T6R043cxKcevFJxSlVaShpA/exec">
+                        <form class="gform pure-form pure-form-stacked" method="POST"
+                            data-email="prabashpriyashan@gmail.com"
+                            action="https://script.google.com/macros/s/AKfycbz0sx_GAqo4bu2zbaNAq_-IljKYBQLgP60QdRaU/exec">
+                            <div class="form-elements">
 
-                            <label for="name">Full Name*: </label>
-                            <input type="text" id="name" name="Name" style="float: right;" required />
+                                <fieldset class="pure-group">
+                                    <label for="name">Full Name*: </label>
+                                    <input type="text" id="name" name="Name" style="float: right;" required />
+                                </fieldset>
+                                <br><br>
 
-                            <br><br>
+                                <fieldset class="pure-group">
+                                    <label for="companyName">Company*: </label>
+                                    <input type="text" id="companyName" name="Company Name" style="float: right;"
+                                        required />
 
-                            <label for="companyName">Company*: </label>
-                            <input type="text" id="companyName" name="Company Name" style="float: right;" required />
+                                    <br><br>
 
-                            <br><br>
+                                    <fieldset class="pure-group">
+                                        <label for="role">Role*: </label>
+                                        <input type="text" id="role" name="Role" style="float: right;" required />
+                                    </fieldset>
 
-                            <label for="role">Role*: </label>
-                            <input type="text" id="role" name="Role" style="float: right;" required />
+                                    <br><br>
 
-                            <br><br>
+                                    <fieldset class="pure-group">
+                                        <label for="address">Address*: </label>
+                                        <input id="address" name="Address" style="float: right;" required />
+                                    </fieldset>
 
-                            <label for="address">Address*: </label>
-                            <input id="address" name="Address" style="float: right;" required />
+                                    <br><br>
 
-                            <br><br>
+                                    <fieldset class="pure-group">
+                                        <label for="email">Email*:</label>
+                                        <input id="email" name="Email" type="email" style="float: right;" required />
+                                        <span class="email-invalid" style="display:none">
+                                            Must be a valid email address</span>
+                                    </fieldset>
 
+                                    <br><br>
 
-                            <label for="email">Email*:</label>
-                            <input id="email" name="Email" type="email" style="float: right;" required />
+                                    <fieldset class="pure-group">
+                                        <label for="phoneNumber">Phone Number*: </label>
+                                        <input id="phoneNumber" name="Phone Number" style="float: right;" required />
+                                    </fieldset>
 
-                            <br><br>
+                                    <br><br>
 
-                            <label for="phoneNumber">Phone Number*: </label>
-                            <input id="phoneNumber" name="Phone Number" style="float: right;" required />
+                                    <fieldset class="pure-group">
+                                        <label for="message" hidden>Message: </label>
+                                        <textarea id="message" name="message" rows="10"
+                                            placeholder="Tell us what's on your mind..." hidden></textarea>
+                                    </fieldset>
 
-                            <br><br>
+                                    <fieldset class="pure-group">
+                                        <label for="webSite">Web Site: </label>
+                                        <input id="webSite" name="Web Site" style="float: right;" />
+                                    </fieldset>
 
-                            <label for="webSite">Web Site: </label>
-                            <input id="webSite" name="Web Site" style="float: right;" />
+                                    <br><br><br>
 
-                            <br><br><br>
+                                    <label>Do you have IT provider?</label><br>
+                                    <input type="radio" id="itYes" name="Do you have IT provider?" value="yes" required>
+                                    <label for="itYes">YES</label><br>
+                                    <input type="radio" id="itNo" name="Do you have IT provider?" value="no" required>
+                                    <label for="itNo">NO</label><br>
+                                    <div id="itProvderName">
+                                        <label for="itProviderName">Who is currently your IT provider?</label>
+                                        <input id="itProviderName" name="Who is currently your IT provider?"
+                                            style="float: right;" /><br>
+                                    </div>
 
-                            <label>Do you have IT provider?</label><br>
-                            <input type="radio" id="itYes" name="Do you have IT provider?" value="yes" required>
-                            <label for="itYes">YES</label><br>
-                            <input type="radio" id="itNo" name="Do you have IT provider?" value="no" required>
-                            <label for="itNo">NO</label><br>
-                            <div id="itProvderName">
-                                <label for="itProviderName">Who is currently your IT provider?</label>
-                                <input id="itProviderName" name="Who is currently your IT provider?"
-                                    style="float: right;" /><br>
+                                    <div id="giveProvderName">
+                                        <label>Can we contact them to find out more about your IT systems?</label><br>
+                                        <input type="radio" id="can"
+                                            name="Can we contact them to find out more about your IT systems?"
+                                            value="yes">
+                                        <label for="can">YES</label><br>
+                                        <input type="radio" id="cannot"
+                                            name="Can we contact them to find out more about your IT systems?"
+                                            value="no">
+                                        <label for="cannot">NO</label>
+                                    </div>
+
+                                    <br>
+
+                                    <label>Do you have on-permise active directory?*</label><br>
+                                    <input type="radio" id="get" name="Do you have on-permise active directory?"
+                                        value="yes" required>
+                                    <label for="get">YES</label><br>
+                                    <input type="radio" id="notget" name="Do you have on-permise active directory?"
+                                        value="no" required>
+                                    <label for="notget">NO</label><br>
+                                    <input type="radio" id="unsure" name="Do you have on-permise active directory?"
+                                        value="unsure" required>
+                                    <label for="unsure">UNSURE</label><br><br>
+
+                                    <label for="step1" hidden>Step 01: </label>
+                                    <input id="step1" name="Step 01" style="float: right;" hidden />
+
+                                    <label for="priceDetails" hidden>PRICE DETAILS: </label>
+                                    <input id="priceDetails" name="PRICE DETAILS" style="float: right;" hidden />
+
+                                    <div style="text-align: center;">
+                                        <button class="btn"
+                                            style="background-color: #aa4077; color: white; text-align: center; width: 8rem; height: 2.5rem;">
+                                            GET CODE
+                                        </button>
+                                    </div>
                             </div>
-
-                            <div id="giveProvderName">
-                                <label>Can we contact them to find out more about your IT systems?</label><br>
-                                <input type="radio" id="can"
-                                    name="Can we contact them to find out more about your IT systems?" value="yes">
-                                <label for="can">YES</label><br>
-                                <input type="radio" id="cannot"
-                                    name="Can we contact them to find out more about your IT systems?" value="no">
-                                <label for="cannot">NO</label>
+                            <div style="display:none;" id="thankyou_message">
+                                <h2>
+                                    <em>Thanks</em> for contacting us!
+                                    We will get back to you soon!
+                                </h2>
                             </div>
-
-                            <br>
-
-                            <label>Do you have on-permise active directory?*</label><br>
-                            <input type="radio" id="get" name="Do you have on-permise active directory?" value="yes"
-                                required>
-                            <label for="get">YES</label><br>
-                            <input type="radio" id="notget" name="Do you have on-permise active directory?" value="no"
-                                required>
-                            <label for="notget">NO</label><br>
-                            <input type="radio" id="unsure" name="Do you have on-permise active directory?"
-                                value="unsure" required>
-                            <label for="unsure">UNSURE</label><br><br>
-
-                            <label for="step1" hidden>Step 01: </label>
-                            <input id="step1" name="Step 01" style="float: right;" hidden />
-
-                            <label for="priceDetails" hidden>PRICE DETAILS: </label>
-                            <input id="priceDetails" name="PRICE DETAILS" style="float: right;" hidden />
-
-                            <div style="text-align: center;">
-                                <button onClick="location.href='http://www.digitanceit.co.uk/'" class="button-success pure-button button-xlarge"
-                                    style="background-color: #aa4077; color: white; text-align: center; width: 8rem; height: 2.5rem;">
-                                    GET CODE
-                                </button>
-                            </div>
-
-
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    <script data-cfasync="false" type="text/javascript"
-        src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
+    <script>
+        (function () {
+            function validEmail(email) {
+                var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+                return re.test(email);
+            }
+
+            function validateHuman(honeypot) {
+                if (honeypot) {
+                    console.log("Robot Detected!");
+                    return true;
+                } else {
+                    console.log("Welcome Human!");
+                }
+            }
+
+            function getFormData(form) {
+                var elements = form.elements;
+
+                var fields = Object.keys(elements).filter(function (k) {
+                    return (elements[k].name !== "honeypot");
+                }).map(function (k) {
+                    if (elements[k].name !== undefined) {
+                        return elements[k].name;
+                    } else if (elements[k].length > 0) {
+                        return elements[k].item(0).name;
+                    }
+                }).filter(function (item, pos, self) {
+                    return self.indexOf(item) == pos && item;
+                });
+
+                var formData = {};
+                fields.forEach(function (name) {
+                    var element = elements[name];
+
+                    formData[name] = element.value;
+
+                    if (element.length) {
+                        var data = [];
+                        for (var i = 0; i < element.length; i++) {
+                            var item = element.item(i);
+                            if (item.checked || item.selected) {
+                                data.push(item.value);
+                            }
+                        }
+                        formData[name] = data.join(', ');
+                    }
+                });
+
+                formData.formDataNameOrder = JSON.stringify(fields);
+                formData.formGoogleSheetName = form.dataset.sheet || "responses";
+                formData.formGoogleSendEmail = form.dataset.email || "";
+
+                console.log(formData);
+                return formData;
+            }
+
+            function handleFormSubmit(event) {
+                event.preventDefault();
+                var form = event.target;
+                var data = getFormData(form);
+
+                if (data.email && !validEmail(data.email)) {
+                    var invalidEmail = form.querySelector(".email-invalid");
+                    if (invalidEmail) {
+                        invalidEmail.style.display = "block";
+                        return false;
+                    }
+                } else {
+                    disableAllButtons(form);
+                    var url = form.action;
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', url);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function () {
+                        console.log(xhr.status, xhr.statusText);
+                        console.log(xhr.responseText);
+                        var formElements = form.querySelector(".form-elements")
+                        if (formElements) {
+                            window.location.href = 'http://www.digitanceit.co.uk/';
+                        }
+                        return;
+                    };
+
+                    var encoded = Object.keys(data).map(function (k) {
+                        return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+                    }).join('&');
+                    xhr.send(encoded);
+                }
+            }
+
+            function loaded() {
+                console.log("Contact form submission handler loaded successfully.");
+                var forms = document.querySelectorAll("form.gform");
+                for (var i = 0; i < forms.length; i++) {
+                    forms[i].addEventListener("submit", handleFormSubmit, false);
+                }
+            };
+            document.addEventListener("DOMContentLoaded", loaded, false);
+
+            function disableAllButtons(form) {
+                var buttons = form.querySelectorAll("button");
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].disabled = true;
+                }
+            }
+        })();
+
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
