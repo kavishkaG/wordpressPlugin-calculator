@@ -343,13 +343,13 @@
                 </div>
                 <div class="card">
                     <div class="card-header" style="background-color: #366bac; color: white;">
-                        <strong>GET CODE</strong>
+                        <strong>GET QUOTE</strong>
                     </div>
                     <div class="card-body" style="background-color: #f1f4f8;">
 
                         <form class="gform pure-form pure-form-stacked" method="POST"
-                            data-email="prabashpriyashan@gmail.com"
-                            action="https://script.google.com/macros/s/AKfycbz0sx_GAqo4bu2zbaNAq_-IljKYBQLgP60QdRaU/exec">
+                            data-email="adam@digitanceit.co.uk"
+                            action="https://script.google.com/macros/s/AKfycbyHF3JcwJM3WroeAtyXblwxkgrix4xAocuWOYon/exec">
                             <div class="form-elements">
 
                                 <fieldset class="pure-group">
@@ -407,53 +407,66 @@
                                     </fieldset>
 
                                     <br><br><br>
-
-                                    <label>Do you have IT provider?</label><br>
-                                    <input type="radio" id="itYes" name="Do you have IT provider?" value="yes" required>
-                                    <label for="itYes">YES</label><br>
-                                    <input type="radio" id="itNo" name="Do you have IT provider?" value="no" required>
-                                    <label for="itNo">NO</label><br>
+                                    <fieldset class="pure-group">
+                                        <label>Do you have IT provider?</label><br>
+                                        <input type="radio" id="itYes" name="Do you have IT provider?" value="yes"
+                                            required>
+                                        <label for="itYes">YES</label><br>
+                                        <input type="radio" id="itNo" name="Do you have IT provider?" value="no"
+                                            required>
+                                        <label for="itNo">NO</label>
+                                    </fieldset><br>
                                     <div id="itProvderName">
-                                        <label for="itProviderName">Who is currently your IT provider?</label>
-                                        <input id="itProviderName" name="Who is currently your IT provider?"
-                                            style="float: right;" /><br>
+                                        <fieldset class="pure-group">
+                                            <label for="itProviderName">Who is currently your IT provider?</label>
+                                            <input id="itProviderName" name="Who is currently your IT provider?"
+                                                style="float: right;" />
+                                        </fieldset><br>
                                     </div>
 
                                     <div id="giveProvderName">
-                                        <label>Can we contact them to find out more about your IT systems?</label><br>
-                                        <input type="radio" id="can"
-                                            name="Can we contact them to find out more about your IT systems?"
-                                            value="yes">
-                                        <label for="can">YES</label><br>
-                                        <input type="radio" id="cannot"
-                                            name="Can we contact them to find out more about your IT systems?"
-                                            value="no">
-                                        <label for="cannot">NO</label>
+                                        <fieldset class="pure-group">
+                                            <label>Can we contact them to find out more about your IT
+                                                systems?</label><br>
+                                            <input type="radio" id="can"
+                                                name="Can we contact them to find out more about your IT systems?"
+                                                value="yes">
+                                            <label for="can">YES</label><br>
+                                            <input type="radio" id="cannot"
+                                                name="Can we contact them to find out more about your IT systems?"
+                                                value="no">
+                                            <label for="cannot">NO</label>
+                                        </fieldset>
                                     </div>
 
                                     <br>
+                                    <fieldset class="pure-group">
+                                        <label>Do you have on-permise active directory?*</label><br>
+                                        <input type="radio" id="get" name="Do you have on-permise active directory?"
+                                            value="yes" required>
+                                        <label for="get">YES</label><br>
+                                        <input type="radio" id="notget" name="Do you have on-permise active directory?"
+                                            value="no" required>
+                                        <label for="notget">NO</label><br>
+                                        <input type="radio" id="unsure" name="Do you have on-permise active directory?"
+                                            value="unsure" required>
+                                        <label for="unsure">UNSURE</label><br><br>
+                                    </fieldset>
 
-                                    <label>Do you have on-permise active directory?*</label><br>
-                                    <input type="radio" id="get" name="Do you have on-permise active directory?"
-                                        value="yes" required>
-                                    <label for="get">YES</label><br>
-                                    <input type="radio" id="notget" name="Do you have on-permise active directory?"
-                                        value="no" required>
-                                    <label for="notget">NO</label><br>
-                                    <input type="radio" id="unsure" name="Do you have on-permise active directory?"
-                                        value="unsure" required>
-                                    <label for="unsure">UNSURE</label><br><br>
+                                    <fieldset class="pure-group">
+                                        <label for="step1" hidden>Step 01: </label>
+                                        <input id="step1" name="Step 01" style="float: right;" hidden />
+                                    </fieldset>
 
-                                    <label for="step1" hidden>Step 01: </label>
-                                    <input id="step1" name="Step 01" style="float: right;" hidden />
-
-                                    <label for="priceDetails" hidden>PRICE DETAILS: </label>
-                                    <input id="priceDetails" name="PRICE DETAILS" style="float: right;" hidden />
+                                    <fieldset class="pure-group">
+                                        <label for="priceDetails" hidden>PRICE DETAILS: </label>
+                                        <input id="priceDetails" name="PRICE DETAILS" style="float: right;" hidden />
+                                    </fieldset>
 
                                     <div style="text-align: center;">
                                         <button class="btn"
                                             style="background-color: #aa4077; color: white; text-align: center; width: 8rem; height: 2.5rem;">
-                                            GET CODE
+                                            GET QUOTE
                                         </button>
                                     </div>
                             </div>
