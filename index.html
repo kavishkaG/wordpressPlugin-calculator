@@ -15,6 +15,19 @@
             padding-top: 2rem;
             padding-bottom: 2rem;
         }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Lato';
+        }
+
+        label {
+            font-family: 'Lato';
+        }
     </style>
 </head>
 
@@ -23,7 +36,7 @@
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
                 <div class="card" style="margin-bottom: 2rem;">
-                    <div class="card-header" style="background-color: #366bac; color: white;">
+                    <div class="card-header" style="background-color: #366bac; color: white; font-family: 'Lato';">
                         <strong>STEP 01 - ADD PC & SERVER</strong>
                     </div>
                     <div class="card-body" style="background-color: #f1f4f8;">
@@ -45,6 +58,9 @@
                                     id="desktops">
                                 <button class="btn btn-sm" type="submit" onclick="plusDesktop()"
                                     style="background-color: #aa4077; color: white;"><i class="fa fa-plus"></i></button>
+                                <row style="text-align: center;">
+                                    <div id="desktopTotalCount"></div>
+                                </row>
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 2rem;">
@@ -64,6 +80,9 @@
                                     id="laptops">
                                 <button class="btn btn-sm" type="submit" onclick="plusLaptop()"
                                     style="background-color: #aa4077; color: white;"><i class="fa fa-plus"></i></button>
+                                <row style="text-align: center;">
+                                    <div id="laptopTotalCount"></div>
+                                </row>
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 2rem;">
@@ -84,12 +103,15 @@
                                     id="servers">
                                 <button class="btn btn-sm" type="submit" onclick="plusServer()"
                                     style="background-color: #aa4077; color: white;"><i class="fa fa-plus"></i></button>
+                                <row style="text-align: center;">
+                                    <div id="serverTotalCount"></div>
+                                </row>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card" style="margin-bottom: 2rem;">
-                    <div class="card-header" style="background-color: #366bac; color: white;">
+                    <div class="card-header" style="background-color: #366bac; color: white; font-family: 'Lato';">
                         <strong>STEP 02 - ADD SERVICES</strong>
                     </div>
                     <div class="card-body" style="background-color: #f1f4f8;">
@@ -176,6 +198,9 @@
                                     id="pcContinuty">
                                 <button class="btn btn-sm" type="submit" onclick="plusPcContinuty()"
                                     style="background-color: #aa4077; color: white;"><i class="fa fa-plus"></i></button>
+                                <row style="text-align: center;">
+                                    <div id="pcContinutyTotalCount"></div>
+                                </row>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="text-align: center;">
                                 <div id="pcContinutyCount"></div>
@@ -195,11 +220,13 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="row" style="margin-bottom: 2rem;" id="standard">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="row" style="margin-bottom: 2rem; display:none;" id="standard">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                 <h5 class="card-title">IT STANDARD SUPPORT</h5>
+                                <p class="card-text" style="float: left;">SLAs 4-48</p>
                             </div>
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"
+                            <br>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
                                 style="text-align: center; padding-top: 0.5rem; padding-bottom: 0.5rem;">
                                 <button class="btn btn-sm" type="submit" onclick="minusItStandardSupport()"
                                     style="background-color: #aa4077; color: white;"><i
@@ -208,16 +235,21 @@
                                     id="itStandardSupport">
                                 <button class="btn btn-sm" type="submit" onclick="plusItStandardSupport()"
                                     style="background-color: #aa4077; color: white;"><i class="fa fa-plus"></i></button>
+                                <div style="text-align: center;">
+                                    <div id="itStandardSupportTotalCount"></div>
+                                </div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="text-align: center;">
                                 <div id="itStandardSupportCount"></div>
                             </div>
                         </div>
-                        <div class="row" style="margin-bottom: 2rem;" id="enhanced">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="row" style="margin-bottom: 2rem; display:none;" id="enhanced">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                 <h5 class="card-title">IT ENHANCED SUPPORT</h5>
+                                <p class="card-text" style="float: left;">SLAs 4-48</p>
                             </div>
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"
+                            <br>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
                                 style="text-align: center; padding-top: 0.5rem; padding-bottom: 0.5rem;">
                                 <button class="btn btn-sm" type="submit" onclick="minusItEnhancedSupport()"
                                     style="background-color: #aa4077; color: white;"><i
@@ -226,6 +258,9 @@
                                     id="itEnhancedSupport">
                                 <button class="btn btn-sm" type="submit" onclick="plusItEnhancedSupport()"
                                     style="background-color: #aa4077; color: white;"><i class="fa fa-plus"></i></button>
+                                <row style="text-align: center;">
+                                    <div id="itEnhancedSupportTotalCount"></div>
+                                </row>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="text-align: center;">
                                 <div id="itEnhancedSupportCount"></div>
@@ -248,6 +283,9 @@
                                     id="office">
                                 <button class="btn btn-sm" type="submit" onclick="plusOffice()"
                                     style="background-color: #aa4077; color: white;"><i class="fa fa-plus"></i></button>
+                                <row style="text-align: center;">
+                                    <div id="officeTotalCount"></div>
+                                </row>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="text-align: center;">
                                 <div id="officeCount"></div>
@@ -258,7 +296,7 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                 <div class="card">
-                    <div class="card-header" style="background-color: #366bac; color: white;">
+                    <div class="card-header" style="background-color: #366bac; color: white; font-family: 'Lato';">
                         <strong>PRICE DETAILS</strong>
                     </div>
                     <div class="card-body" style="background-color: #f1f4f8;">
@@ -337,261 +375,283 @@
                         </p>
                     </div>
                     <div class="card-footer" style="background-color: #6f9ceb; color: white; text-align: center;">
-                        <h7>TOTAL COST</h7>
-                        <h3 id="totalCost"></h3>
+                        <h5>Total Monthly Cost</h5>
+                        <h4 id="totalCost"></h4>
+                        <p style="margin: 0rem !important;">*Subject to onboarding fee £250.00</p>
+                        <p style="margin: 0rem !important;">"All prices subject to VAT</p>
+                        <!-- <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <h5 id="costName" style="display:none;">Cost</h5>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <h5 id="totalCost"></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                            </div>
+                            <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <h4 id="plusSign" style="display:none;">+</h4>
+                            </div>
+                            <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <h5 id="onboardingFeeName" style="display:none;">Onboarding Fee</h5>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <h5 id="onboardingFee" style="float:unset;"></h5>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header" style="background-color: #366bac; color: white;">
-                        <strong>GET QUOTE</strong>
-                    </div>
+                    <!-- <div class="card-header" style="background-color: #366bac; color: white; text-align: center;">
+                        <h5>TOTAL COST</h5>
+                        <h3 id="totalCostWithFee"></h3>
+                    </div> -->
                     <div class="card-body" style="background-color: #f1f4f8;">
-
-                        <form class="gform pure-form pure-form-stacked" method="POST"
-                            data-email="adam@digitanceit.co.uk"
-                            action="https://script.google.com/macros/s/AKfycbyHF3JcwJM3WroeAtyXblwxkgrix4xAocuWOYon/exec">
-                            <div class="form-elements">
-
-                                <fieldset class="pure-group">
+                        <!-- <form  class="gform"> -->
+                            <!-- <div class="form-elements"> -->
+                                <!-- <fieldset class="pure-group"> -->
                                     <label for="name">Full Name*: </label>
                                     <input type="text" id="name" name="Name" style="float: right;" required />
-                                </fieldset>
+                                <!-- </fieldset> -->
                                 <br><br>
-
-                                <fieldset class="pure-group">
+                                <!-- <fieldset class="pure-group"> -->
                                     <label for="companyName">Company*: </label>
                                     <input type="text" id="companyName" name="Company Name" style="float: right;"
                                         required />
-
+                                <!-- </fieldset> -->
+                                <br><br>
+                                <!-- <fieldset class="pure-group"> -->
+                                    <label for="role">Role*: </label>
+                                    <input type="text" id="role" name="Role" style="float: right;" required />
+                                <!-- </fieldset> -->
+                                <br><br>
+                                <!-- <fieldset class="pure-group"> -->
+                                    <label for="address">Address*: </label>
+                                    <input id="address" name="Address" style="float: right;" required />
+                                <!-- </fieldset> -->
+                                <br><br>
+                                <!-- <fieldset class="pure-group"> -->
+                                    <label for="email">Email*:</label>
+                                    <input id="email" name="Email" type="email" style="float: right;" required />
+                                <!-- </fieldset> -->
+                                <br><br>
+                                <!-- <fieldset class="pure-group"> -->
+                                    <label for="phoneNumber">Phone Number*: </label>
+                                    <input id="phoneNumber" name="Phone Number" style="float: right;" required />
+                                <!-- </fieldset> -->
+                                <br><br>
+                                <!-- <fieldset class="pure-group"> -->
+                                    <label for="message" hidden>Message: </label>
+                                    <textarea id="message" name="message" rows="10"
+                                        placeholder="Tell us what's on your mind..." hidden></textarea>
+                                <!-- </fieldset> -->
+                                <!-- <fieldset class="pure-group"> -->
+                                    <label for="webSite">Web Site: </label>
+                                    <input id="webSite" name="Web Site" style="float: right;" />
+                                <!-- </fieldset> -->
+                                <br><br>
+                                <!-- <fieldset class="pure-group"> -->
+                                    <label>Do you have IT provider?</label><br>
+                                    <input type="radio" id="itYes" name="Do you have IT provider?" value="yes" required>
+                                    <label for="itYes">YES</label><br>
+                                    <input type="radio" id="itNo" name="Do you have IT provider?" value="no" required>
+                                    <label for="itNo">NO</label>
+                                <!-- </fieldset> -->
+                                <div id="itProvderName" style="display:none;">
+                                    <!-- <fieldset class="pure-group"> -->
+                                        <label for="itProviderName">Who is currently your IT provider?</label>
+                                        <input id="itProviderName" name="Who is currently your IT provider?"
+                                            style="float: right;" />
+                                    <!-- </fieldset> --><br>
+                                </div>
+                                <div id="giveProvderName" style="display:none;">
+                                    <!-- <fieldset class="pure-group"> -->
+                                        <label>Can we contact them to find out more about your IT
+                                            systems?</label><br>
+                                        <input type="radio" id="can"
+                                            name="Can we contact them to find out more about your IT systems?"
+                                            value="yes">
+                                        <label for="can">YES</label><br>
+                                        <input type="radio" id="cannot"
+                                            name="Can we contact them to find out more about your IT systems?"
+                                            value="no">
+                                        <label for="cannot">NO</label>
+                                    <!-- </fieldset> -->
+                                </div>
+                                <br>
+                                <!-- <fieldset class="pure-group"> -->
+                                    <label>Do you have on-permise active directory?*</label><br>
+                                    <input type="radio" id="get" name="Do you have on-permise active directory?"
+                                        value="yes" required>
+                                    <label for="get">YES</label><br>
+                                    <input type="radio" id="notget" name="Do you have on-permise active directory?"
+                                        value="no" required>
+                                    <label for="notget">NO</label><br>
+                                    <input type="radio" id="unsure" name="Do you have on-permise active directory?"
+                                        value="unsure" required>
+                                    <label for="unsure">UNSURE</label>
+                                    <!-- </fieldset> -->
                                     <br><br>
-
-                                    <fieldset class="pure-group">
-                                        <label for="role">Role*: </label>
-                                        <input type="text" id="role" name="Role" style="float: right;" required />
-                                    </fieldset>
-
-                                    <br><br>
-
-                                    <fieldset class="pure-group">
-                                        <label for="address">Address*: </label>
-                                        <input id="address" name="Address" style="float: right;" required />
-                                    </fieldset>
-
-                                    <br><br>
-
-                                    <fieldset class="pure-group">
-                                        <label for="email">Email*:</label>
-                                        <input id="email" name="Email" type="email" style="float: right;" required />
-                                        <span class="email-invalid" style="display:none">
-                                            Must be a valid email address</span>
-                                    </fieldset>
-
-                                    <br><br>
-
-                                    <fieldset class="pure-group">
-                                        <label for="phoneNumber">Phone Number*: </label>
-                                        <input id="phoneNumber" name="Phone Number" style="float: right;" required />
-                                    </fieldset>
-
-                                    <br><br>
-
-                                    <fieldset class="pure-group">
-                                        <label for="message" hidden>Message: </label>
-                                        <textarea id="message" name="message" rows="10"
-                                            placeholder="Tell us what's on your mind..." hidden></textarea>
-                                    </fieldset>
-
-                                    <fieldset class="pure-group">
-                                        <label for="webSite">Web Site: </label>
-                                        <input id="webSite" name="Web Site" style="float: right;" />
-                                    </fieldset>
-
-                                    <br><br><br>
-                                    <fieldset class="pure-group">
-                                        <label>Do you have IT provider?</label><br>
-                                        <input type="radio" id="itYes" name="Do you have IT provider?" value="yes"
-                                            required>
-                                        <label for="itYes">YES</label><br>
-                                        <input type="radio" id="itNo" name="Do you have IT provider?" value="no"
-                                            required>
-                                        <label for="itNo">NO</label>
-                                    </fieldset><br>
-                                    <div id="itProvderName">
-                                        <fieldset class="pure-group">
-                                            <label for="itProviderName">Who is currently your IT provider?</label>
-                                            <input id="itProviderName" name="Who is currently your IT provider?"
-                                                style="float: right;" />
-                                        </fieldset><br>
-                                    </div>
-
-                                    <div id="giveProvderName">
-                                        <fieldset class="pure-group">
-                                            <label>Can we contact them to find out more about your IT
-                                                systems?</label><br>
-                                            <input type="radio" id="can"
-                                                name="Can we contact them to find out more about your IT systems?"
-                                                value="yes">
-                                            <label for="can">YES</label><br>
-                                            <input type="radio" id="cannot"
-                                                name="Can we contact them to find out more about your IT systems?"
-                                                value="no">
-                                            <label for="cannot">NO</label>
-                                        </fieldset>
-                                    </div>
-
-                                    <br>
-                                    <fieldset class="pure-group">
-                                        <label>Do you have on-permise active directory?*</label><br>
-                                        <input type="radio" id="get" name="Do you have on-permise active directory?"
-                                            value="yes" required>
-                                        <label for="get">YES</label><br>
-                                        <input type="radio" id="notget" name="Do you have on-permise active directory?"
-                                            value="no" required>
-                                        <label for="notget">NO</label><br>
-                                        <input type="radio" id="unsure" name="Do you have on-permise active directory?"
-                                            value="unsure" required>
-                                        <label for="unsure">UNSURE</label><br><br>
-                                    </fieldset>
-
-                                    <fieldset class="pure-group">
-                                        <label for="step1" hidden>Step 01: </label>
-                                        <input id="step1" name="Step 01" style="float: right;" hidden />
-                                    </fieldset>
-
-                                    <fieldset class="pure-group">
-                                        <label for="priceDetails" hidden>PRICE DETAILS: </label>
-                                        <input id="priceDetails" name="PRICE DETAILS" style="float: right;" hidden />
-                                    </fieldset>
-
-                                    <div style="text-align: center;">
-                                        <button class="btn"
-                                            style="background-color: #aa4077; color: white; text-align: center; width: 8rem; height: 2.5rem;">
-                                            GET QUOTE
-                                        </button>
-                                    </div>
-                            </div>
-                            <div style="display:none;" id="thankyou_message">
-                                <h2>
-                                    <em>Thanks</em> for contacting us!
-                                    We will get back to you soon!
-                                </h2>
-                            </div>
-                        </form>
-
+                                <div style="text-align: center;">
+                                    <button class="btn"
+                                        style="background-color: #aa4077; color: white; text-align: center; width: 8rem; height: 2.5rem; font-family: lato;"
+                                        onclick="sendEmail()">
+                                        GET QUOTE
+                                    </button>
+                                </div>
+                            <!-- </div> -->
+                        <!-- </form> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    <script>
-        (function () {
-            function validEmail(email) {
-                var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-                return re.test(email);
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+        function sendEmail() {
+            var onboardingFee = 250;
+            var fullName = document.getElementById("name").value;
+            var company = document.getElementById("companyName").value;
+            var address = document.getElementById("address").value;
+            var role = document.getElementById("role").value;
+            var email = document.getElementById("email").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var webSite = document.getElementById("webSite").value;
+            var itYes = parseInt($('#itYes').val());
+            var youHaveITProvider = '';
+            if (itYes == 'yes') {
+                youHaveITProvider = 'Yes';
+            } else {
+                youHaveITProvider = 'No';
+            }
+            var itProviderName = document.getElementById("itProviderName").value;
+            var can = parseInt($('#can').val());
+            var canSystem = '';
+            if (can == 'yes') {
+                canSystem = 'Yes';
+            } else {
+                canSystem = 'No';
+            }
+            var get = parseInt($('#get').val());
+            var getSystem = '';
+            if (get == 'yes') {
+                canSystem = 'Yes';
+            } else if (get == 'no') {
+                getSystem = 'No';
+            } else {
+                getSystem = 'Unsure';
             }
 
-            function validateHuman(honeypot) {
-                if (honeypot) {
-                    console.log("Robot Detected!");
-                    return true;
-                } else {
-                    console.log("Welcome Human!");
-                }
+            var desktopCount = parseInt($('#desktops').val());
+            var laptopCount = parseInt($('#laptops').val());
+            var pcCount = desktopCount + laptopCount;
+            var pcAntiVirousPrice = 5;
+            var pcMonAndAlertPrice = 8;
+
+            var pcAntiVirusTotalPrice = pcCount * pcAntiVirousPrice;
+            var pcMonAndAlertTotalPrice = pcCount * pcMonAndAlertPrice;
+
+            var serverCount = parseInt($('#servers').val());
+            var serverAntiVirousPrice = 6;
+            var serverMonAndAlertPrice = 20;
+
+            var serverAntiVirusTotalPrice = serverCount * serverAntiVirousPrice;
+            var serverMonAndAlertTotalPrice = serverCount * serverMonAndAlertPrice;
+
+            var pcContinutyCount = parseInt($('#pcContinuty').val());
+            var pcContinutyPrice = 15;
+
+            var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            var itStandardSupportCount = 0
+            if (parseInt($('#itStandardSupport').val()) == 3) {
+                itStandardSupportCount = 0;
+            } else {
+                itStandardSupportCount = parseInt($('#itStandardSupport').val());
             }
+            var itStandardSupportPrice = 45;
 
-            function getFormData(form) {
-                var elements = form.elements;
+            var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
 
-                var fields = Object.keys(elements).filter(function (k) {
-                    return (elements[k].name !== "honeypot");
-                }).map(function (k) {
-                    if (elements[k].name !== undefined) {
-                        return elements[k].name;
-                    } else if (elements[k].length > 0) {
-                        return elements[k].item(0).name;
-                    }
-                }).filter(function (item, pos, self) {
-                    return self.indexOf(item) == pos && item;
-                });
-
-                var formData = {};
-                fields.forEach(function (name) {
-                    var element = elements[name];
-
-                    formData[name] = element.value;
-
-                    if (element.length) {
-                        var data = [];
-                        for (var i = 0; i < element.length; i++) {
-                            var item = element.item(i);
-                            if (item.checked || item.selected) {
-                                data.push(item.value);
-                            }
-                        }
-                        formData[name] = data.join(', ');
-                    }
-                });
-
-                formData.formDataNameOrder = JSON.stringify(fields);
-                formData.formGoogleSheetName = form.dataset.sheet || "responses";
-                formData.formGoogleSendEmail = form.dataset.email || "";
-
-                console.log(formData);
-                return formData;
+            var itEnhancedSupportCount = 0
+            if (parseInt($('#itEnhancedSupport').val()) == 3) {
+                itEnhancedSupportCount = 0;
+            } else {
+                itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
             }
+            var itEnhancedSupportPrice = 55;
 
-            function handleFormSubmit(event) {
-                event.preventDefault();
-                var form = event.target;
-                var data = getFormData(form);
+            var itEnhancedSupportTotalPrice = itEnhancedSupportCount * itEnhancedSupportPrice;
 
-                if (data.email && !validEmail(data.email)) {
-                    var invalidEmail = form.querySelector(".email-invalid");
-                    if (invalidEmail) {
-                        invalidEmail.style.display = "block";
-                        return false;
-                    }
-                } else {
-                    disableAllButtons(form);
-                    var url = form.action;
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('POST', url);
-                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    xhr.onreadystatechange = function () {
-                        console.log(xhr.status, xhr.statusText);
-                        console.log(xhr.responseText);
-                        var formElements = form.querySelector(".form-elements")
-                        if (formElements) {
-                            window.location.href = 'http://www.digitanceit.co.uk/';
-                        }
-                        return;
-                    };
+            var officeCount = parseInt($('#office').val());
+            var officePrice = 12;
 
-                    var encoded = Object.keys(data).map(function (k) {
-                        return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-                    }).join('&');
-                    xhr.send(encoded);
-                }
-            }
+            var officeTotalPrice = officeCount * officePrice;
 
-            function loaded() {
-                console.log("Contact form submission handler loaded successfully.");
-                var forms = document.querySelectorAll("form.gform");
-                for (var i = 0; i < forms.length; i++) {
-                    forms[i].addEventListener("submit", handleFormSubmit, false);
-                }
-            };
-            document.addEventListener("DOMContentLoaded", loaded, false);
+            var backUpPrice = 20;
 
-            function disableAllButtons(form) {
-                var buttons = form.querySelectorAll("button");
-                for (var i = 0; i < buttons.length; i++) {
-                    buttons[i].disabled = true;
-                }
-            }
-        })();
+            var backUpTotalPrice = serverCount * backUpPrice;
 
+            var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
+
+            var totalCostWithFee = totalCost + onboardingFee;
+            
+            console.log('jcdkjcgsjkcsjdc');
+
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "ganepolakavishka@gmail.com",
+                Password: "password",
+                From: "ganepolakavishka@gmail.com",
+                To: 'prabashpriyashan@gmail.com',
+                Subject: "email send",
+                Body: `<h3>Full Name = ` + fullName + `</h3>` +
+                    `<h3>Company = ` + company + `</h3>` +
+                    `<h3>Role = ` + role + `</h3>` +
+                    `<h3>Address = ` + address + `</h3>` +
+                    `<h3>Email = ` + email + `</h3>` +
+                    `<h3>Phone Number = ` + phoneNumber + `</h3>` +
+                    `<h3>Web Site = ` + webSite + `</h3>` +
+                    `<h3>Do you have IT provider? ` + youHaveITProvider + `</h3>` +
+                    `<h3>Who is currently your IT provider? ` + itProviderName + `</h3>` +
+                    `<h3>Can we contact them to find out more about your IT
+                                                systems? `+ canSystem + `</h3>` +
+                    `<h3>Do you have on-permise active directory? ` + getSystem + `</h3>` +
+                    `<h3>> Desktop Count = ` + desktopCount + `</h3>` +
+                    `<h3>> Laptop Count = ` + laptopCount + `</h3>` +
+                    `<h3>> Server Count = ` + serverCount + `</h3>` +
+                    `<p>1)PC - ANITIVIRUS = ` + pcCount + `(quantity) ` + pcAntiVirusTotalPrice + `.00</p>` +
+                    `<p>2)PC - MONITORING & ALERT = ` + pcCount + `(quantity) ` + pcMonAndAlertTotalPrice + `.00</p>` +
+                    `<p>3)SERVER - ANITIVIRUS = ` + serverCount + `(quantity) ` + serverAntiVirusTotalPrice + `.00</p>` +
+                    `<p>4)SERVER - MONITORING & ALERT = ` + serverCount + `(quantity) ` + serverMonAndAlertTotalPrice + `.00</p>` +
+                    `<p>5)SERVER - BACKUPS = ` + serverCount + `(quantity) ` + backUpTotalPrice + `.00</p>` +
+                    `<p>6)PC BUSINES CONTINUTY = ` + pcContinutyCount + `(quantity) ` + pcContinutyCountTotalPrice + `.00</p>` +
+                    `<p>7)IT STANDARD SUPPORT = ` + itStandardSupportCount + `(quantity) ` + itStandardSupportTotalPrice + `.00</p>` +
+                    `<p>8)IT ENHANCED SUPPORT = ` + itEnhancedSupportCount + `(quantity) ` + itEnhancedSupportTotalPrice + `.00</p>` +
+                    `<p>9)MICROSOFT 365 = ` + officeCount + `(quantity) ` + officeTotalPrice + `.00</p>` +
+                    `<h3>TOTAL COST = Cost + Onboarding Fee</h3>` +
+                    `<h3>TOTAL COST = ` + `£` + totalCost + `.00 + £` + onboardingFee + `.00</h3>` +
+                    `<h1>TOTAL COST = ` + `£` + totalCostWithFee + `.00</h1>`,
+            });
+
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "ganepolakavishka@gmail.com",
+                Password: "password",
+                From: "ganepolakavishka@gmail.com",
+                To: email,
+                Subject: "email send",
+                Body: `<h2 style=\"text-align:center;\"><em>Thanks</em> for contacting us! We will get back to you soon!</h2>`,
+            }).then(
+                    window.location.href = 'http://www.digitanceit.co.uk/'
+                );
+        }
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -602,10 +662,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
     <script>
-
         $('#desktops').change(function () {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             var desktopCount = parseInt($(this).val());
             var laptopCount = parseInt($('#laptops').val());
             var pcCount = desktopCount + laptopCount;
@@ -648,8 +710,11 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-            var desktopIconList = "", i;
+            var totalCostWithFee = totalCost + onboardingFee;
 
+            document.getElementById("desktopTotalCount").innerHTML = desktopCount;
+
+            var desktopIconList = "", i;
             for (i = 1; i <= desktopCount; i++) {
                 desktopIconList = desktopIconList + "<img src=\"https://img.icons8.com/cotton/25/000000/monitor.png\"/>";
             }
@@ -667,30 +732,14 @@
             }
             document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
 
-            var portalList = "", y;
-            for (y = 1; y <= (pcCount + serverCount); y++) {
-                portalList = portalList + "<img src=\"https://img.icons8.com/cotton/30/000000/new-window.png\"/>";
-            }
-            document.getElementById("clientPortal").innerHTML = portalList;
-
-            var monthlyReportList = "", z;
-            for (z = 1; z <= (pcCount + serverCount); z++) {
-                monthlyReportList = monthlyReportList + "<img src=\"https://img.icons8.com/cotton/30/000000/calendar-27--v3.png\"/>";
+            var portalList = "";
+            var monthlyReportList = "";
+            if ((pcCount + serverCount) > 0) {
+                monthlyReportList = "<img src=\"https://img.icons8.com/cotton/70/000000/calendar-27--v3.png\"/>";
+                portalList = "<img src=\"https://img.icons8.com/cotton/70/000000/new-window.png\"/>";
             }
             document.getElementById("monthlyReport").innerHTML = monthlyReportList;
-
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
+            document.getElementById("clientPortal").innerHTML = portalList;
 
             document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
 
@@ -700,10 +749,19 @@
 
             document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
+
         });
 
         $('#laptops').change(function () {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             var laptopCount = parseInt($(this).val());
             var desktopCount = parseInt($('#desktops').val());
             var pcCount = desktopCount + laptopCount;
@@ -746,6 +804,10 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("laptopTotalCount").innerHTML = laptopCount;
+
             var laptopIconList = "", i;
             for (i = 1; i <= laptopCount; i++) {
                 laptopIconList = laptopIconList + "<img src=\"https://img.icons8.com/cotton/25/000000/notebook-computer.png\"/>";
@@ -764,30 +826,14 @@
             }
             document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
 
-            var portalList = "", y;
-            for (y = 1; y <= (pcCount + serverCount); y++) {
-                portalList = portalList + "<img src=\"https://img.icons8.com/cotton/30/000000/new-window.png\"/>";
-            }
-            document.getElementById("clientPortal").innerHTML = portalList;
-
-            var monthlyReportList = "", z;
-            for (z = 1; z <= (pcCount + serverCount); z++) {
-                monthlyReportList = monthlyReportList + "<img src=\"https://img.icons8.com/cotton/30/000000/calendar-27--v3.png\"/>";
+            var portalList = "";
+            var monthlyReportList = "";
+            if ((pcCount + serverCount) > 0) {
+                monthlyReportList = "<img src=\"https://img.icons8.com/cotton/70/000000/calendar-27--v3.png\"/>";
+                portalList = "<img src=\"https://img.icons8.com/cotton/70/000000/new-window.png\"/>";
             }
             document.getElementById("monthlyReport").innerHTML = monthlyReportList;
-
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
+            document.getElementById("clientPortal").innerHTML = portalList;
 
             document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
 
@@ -797,10 +843,18 @@
 
             document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         });
 
         $('#servers').change(function () {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             var serverCount = parseInt($(this).val());
             var serverAntiVirousPrice = 6;
             var serverMonAndAlertPrice = 20;
@@ -843,6 +897,10 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("serverTotalCount").innerHTML = serverCount;
+
             var serverIconList = "", i;
             for (i = 1; i <= serverCount; i++) {
                 serverIconList = serverIconList + "<img src=\"https://img.icons8.com/cotton/25/000000/server.png\"/>";
@@ -861,36 +919,20 @@
             }
             document.getElementById("serverMonAndAlert").innerHTML = monAndAlertIconList;
 
-            var portalList = "", y;
-            for (y = 1; y <= (pcCount + serverCount); y++) {
-                portalList = portalList + "<img src=\"https://img.icons8.com/cotton/30/000000/new-window.png\"/>";
-            }
-            document.getElementById("clientPortal").innerHTML = portalList;
-
-            var monthlyReportList = "", z;
-            for (z = 1; z <= (pcCount + serverCount); z++) {
-                monthlyReportList = monthlyReportList + "<img src=\"https://img.icons8.com/cotton/30/000000/calendar-27--v3.png\"/>";
+            var portalList = "";
+            var monthlyReportList = "";
+            if ((pcCount + serverCount) > 0) {
+                monthlyReportList = "<img src=\"https://img.icons8.com/cotton/70/000000/calendar-27--v3.png\"/>";
+                portalList = "<img src=\"https://img.icons8.com/cotton/70/000000/new-window.png\"/>";
             }
             document.getElementById("monthlyReport").innerHTML = monthlyReportList;
+            document.getElementById("clientPortal").innerHTML = portalList;
 
             var backupList = "", a;
             for (a = 1; a <= serverCount; a++) {
                 backupList = backupList + "<img src=\"https://img.icons8.com/cotton/30/000000/cloud-storage.png\"/>";
             }
             document.getElementById("serverBackup").innerHTML = backupList;
-
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
 
             document.getElementById("serverBackupName").innerHTML = "SERVER - BACKUP";
 
@@ -904,10 +946,18 @@
 
             document.getElementById("serverMonAndAlertPrice").innerHTML = serverMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         });
 
         $('#pcContinuty').change(function () {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             var pcContinutyCount = parseInt($(this).val());
             var pcContinutyPrice = 15;
 
@@ -950,38 +1000,33 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("pcContinutyTotalCount").innerHTML = pcContinutyCount;
+
             var pcContinutyIconList = "", i;
             for (i = 1; i <= pcContinutyCount; i++) {
                 pcContinutyIconList = pcContinutyIconList + "<img src=\"https://img.icons8.com/cotton/30/000000/cloud-computing.png\"/>";
             }
             document.getElementById("pcContinutyCount").innerHTML = pcContinutyIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("pcContinutyName").innerHTML = "PC BUSINES CONTINUITY";
 
             document.getElementById("pcContinutyPrice").innerHTML = pcContinutyCountTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         });
 
         $('#itStandardSupport').change(function () {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $('#enhanced').hide();
-            var itStandardSupportCount = parseInt($(this).val());
-            var itStandardSupportPrice = 45;
-
-            var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
 
             var desktopCount = parseInt($('#desktops').val());
             var laptopCount = parseInt($('#laptops').val());
@@ -1004,7 +1049,11 @@
 
             var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
 
-            $("#itEnhancedSupport").val(parseInt(0));
+            var itStandardSupportCount = parseInt($(this).val());
+            var itStandardSupportPrice = 45;
+
+            var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
+
             var itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
             var itEnhancedSupportPrice = 55;
 
@@ -1021,35 +1070,33 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-            var itStandardSupportIconList = "", i;
+            var totalCostWithFee = totalCost + onboardingFee;
 
+            document.getElementById("itStandardSupportTotalCount").innerHTML = itStandardSupportCount;
+
+            var itStandardSupportIconList = "", i;
             for (i = 1; i <= itStandardSupportCount; i++) {
                 itStandardSupportIconList = itStandardSupportIconList + "<img src=\"https://img.icons8.com/cotton/30/000000/talk.png\"/>";
             }
             document.getElementById("itStandardSupportCount").innerHTML = itStandardSupportIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("itStandardSupportName").innerHTML = "IT STANDARD SUPPORT";
 
             document.getElementById("itStandardSupportPrice").innerHTML = itStandardSupportTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
 
         });
 
         $('#itEnhancedSupport').change(function () {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $('#standard').hide();
             var itEnhancedSupportCount = parseInt($(this).val());
             var itEnhancedSupportPrice = 55;
@@ -1077,11 +1124,15 @@
 
             var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
 
-            $("#itStandardSupport").val(parseInt(0));
             var itStandardSupportCount = parseInt($('#itStandardSupport').val());
             var itStandardSupportPrice = 45;
 
             var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
+
+            var itEnhancedSupportCount = parseInt($(this).val());
+            var itEnhancedSupportPrice = 55;
+
+            var itEnhancedSupportTotalPrice = itEnhancedSupportCount * itEnhancedSupportPrice;
 
             var officeCount = parseInt($('#office').val());
             var officePrice = 12;
@@ -1094,35 +1145,33 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-            var itEnhancedSupportIconList = "", i;
+            var totalCostWithFee = totalCost + onboardingFee;
 
+            document.getElementById("itEnhancedSupportTotalCount").innerHTML = itEnhancedSupportCount;
+
+            var itEnhancedSupportIconList = "", i;
             for (i = 1; i <= itEnhancedSupportCount; i++) {
                 itEnhancedSupportIconList = itEnhancedSupportIconList + "<img src=\"https://img.icons8.com/cotton/30/000000/talk.png\"/>";
             }
             document.getElementById("itEnhancedSupportCount").innerHTML = itEnhancedSupportIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("itEnhancedSupportName").innerHTML = "IT ENHANCED SUPPORT";
 
             document.getElementById("itEnhancedSupportPrice").innerHTML = itEnhancedSupportTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
 
         });
 
         $('#office').change(function () {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             var officeCount = parseInt($(this).val());
             var officePrice = 12;
 
@@ -1165,35 +1214,33 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-            var officeIconList = "", i;
+            var totalCostWithFee = totalCost + onboardingFee;
 
+            document.getElementById("officeTotalCount").innerHTML = officeCount;
+
+            var officeIconList = "", i;
             for (i = 1; i <= officeCount; i++) {
                 officeIconList = officeIconList + "<img src=\"https://img.icons8.com/color/30/000000/office-365.png\"/>";
             }
             document.getElementById("officeCount").innerHTML = officeIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("officeName").innerHTML = "OFFICE 365";
 
             document.getElementById("officePrice").innerHTML = officeTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
 
         });
 
         function minusDesktop() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#desktops").val(parseInt($("#desktops").val()) - 1);
             var desktopCount = parseInt($('#desktops').val());
             var laptopCount = parseInt($('#laptops').val());
@@ -1237,8 +1284,11 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-            var desktopIconList = "", i;
+            var totalCostWithFee = totalCost + onboardingFee;
 
+            document.getElementById("desktopTotalCount").innerHTML = desktopCount;
+
+            var desktopIconList = "", i;
             for (i = 1; i <= desktopCount; i++) {
                 desktopIconList = desktopIconList + "<img src=\"https://img.icons8.com/cotton/25/000000/monitor.png\"/>";
             }
@@ -1256,30 +1306,14 @@
             }
             document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
 
-            var portalList = "", y;
-            for (y = 1; y <= (pcCount + serverCount); y++) {
-                portalList = portalList + "<img src=\"https://img.icons8.com/cotton/30/000000/new-window.png\"/>";
-            }
-            document.getElementById("clientPortal").innerHTML = portalList;
-
-            var monthlyReportList = "", z;
-            for (z = 1; z <= (pcCount + serverCount); z++) {
-                monthlyReportList = monthlyReportList + "<img src=\"https://img.icons8.com/cotton/30/000000/calendar-27--v3.png\"/>";
+            var portalList = "";
+            var monthlyReportList = "";
+            if ((pcCount + serverCount) > 0) {
+                monthlyReportList = "<img src=\"https://img.icons8.com/cotton/70/000000/calendar-27--v3.png\"/>";
+                portalList = "<img src=\"https://img.icons8.com/cotton/70/000000/new-window.png\"/>";
             }
             document.getElementById("monthlyReport").innerHTML = monthlyReportList;
-
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
+            document.getElementById("clientPortal").innerHTML = portalList;
 
             document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
 
@@ -1289,10 +1323,18 @@
 
             document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function plusDesktop() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#desktops").val(parseInt($("#desktops").val()) + 1);
             var desktopCount = parseInt($('#desktops').val());
             var laptopCount = parseInt($('#laptops').val());
@@ -1336,8 +1378,11 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-            var desktopIconList = "", i;
+            var totalCostWithFee = totalCost + onboardingFee;
 
+            document.getElementById("desktopTotalCount").innerHTML = desktopCount;
+
+            var desktopIconList = "", i;
             for (i = 1; i <= desktopCount; i++) {
                 desktopIconList = desktopIconList + "<img src=\"https://img.icons8.com/cotton/25/000000/monitor.png\"/>";
             }
@@ -1355,30 +1400,14 @@
             }
             document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
 
-            var portalList = "", y;
-            for (y = 1; y <= (pcCount + serverCount); y++) {
-                portalList = portalList + "<img src=\"https://img.icons8.com/cotton/30/000000/new-window.png\"/>";
-            }
-            document.getElementById("clientPortal").innerHTML = portalList;
-
-            var monthlyReportList = "", z;
-            for (z = 1; z <= (pcCount + serverCount); z++) {
-                monthlyReportList = monthlyReportList + "<img src=\"https://img.icons8.com/cotton/30/000000/calendar-27--v3.png\"/>";
+            var portalList = "";
+            var monthlyReportList = "";
+            if ((pcCount + serverCount) > 0) {
+                monthlyReportList = "<img src=\"https://img.icons8.com/cotton/70/000000/calendar-27--v3.png\"/>";
+                portalList = "<img src=\"https://img.icons8.com/cotton/70/000000/new-window.png\"/>";
             }
             document.getElementById("monthlyReport").innerHTML = monthlyReportList;
-
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
+            document.getElementById("clientPortal").innerHTML = portalList;
 
             document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
 
@@ -1388,10 +1417,18 @@
 
             document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function minusLaptop() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#laptops").val(parseInt($("#laptops").val()) - 1);
             var desktopCount = parseInt($('#desktops').val());
             var laptopCount = parseInt($('#laptops').val());
@@ -1435,6 +1472,10 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("laptopTotalCount").innerHTML = laptopCount;
+
             var laptopIconList = "", i;
             for (i = 1; i <= laptopCount; i++) {
                 laptopIconList = laptopIconList + "<img src=\"https://img.icons8.com/cotton/25/000000/notebook-computer.png\"/>";
@@ -1453,30 +1494,14 @@
             }
             document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
 
-            var portalList = "", y;
-            for (y = 1; y <= (pcCount + serverCount); y++) {
-                portalList = portalList + "<img src=\"https://img.icons8.com/cotton/30/000000/new-window.png\"/>";
-            }
-            document.getElementById("clientPortal").innerHTML = portalList;
-
-            var monthlyReportList = "", z;
-            for (z = 1; z <= (pcCount + serverCount); z++) {
-                monthlyReportList = monthlyReportList + "<img src=\"https://img.icons8.com/cotton/30/000000/calendar-27--v3.png\"/>";
+            var portalList = "";
+            var monthlyReportList = "";
+            if ((pcCount + serverCount) > 0) {
+                monthlyReportList = "<img src=\"https://img.icons8.com/cotton/70/000000/calendar-27--v3.png\"/>";
+                portalList = "<img src=\"https://img.icons8.com/cotton/70/000000/new-window.png\"/>";
             }
             document.getElementById("monthlyReport").innerHTML = monthlyReportList;
-
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
+            document.getElementById("clientPortal").innerHTML = portalList;
 
             document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
 
@@ -1486,10 +1511,18 @@
 
             document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function plusLaptop() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#laptops").val(parseInt($("#laptops").val()) + 1);
             var desktopCount = parseInt($('#desktops').val());
             var laptopCount = parseInt($('#laptops').val());
@@ -1533,6 +1566,10 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("laptopTotalCount").innerHTML = laptopCount;
+
             var laptopIconList = "", i;
             for (i = 1; i <= laptopCount; i++) {
                 laptopIconList = laptopIconList + "<img src=\"https://img.icons8.com/cotton/25/000000/notebook-computer.png\"/>";
@@ -1551,30 +1588,14 @@
             }
             document.getElementById("pcMonAndAlert").innerHTML = monAndAlertIconList;
 
-            var portalList = "", y;
-            for (y = 1; y <= (pcCount + serverCount); y++) {
-                portalList = portalList + "<img src=\"https://img.icons8.com/cotton/30/000000/new-window.png\"/>";
-            }
-            document.getElementById("clientPortal").innerHTML = portalList;
-
-            var monthlyReportList = "", z;
-            for (z = 1; z <= (pcCount + serverCount); z++) {
-                monthlyReportList = monthlyReportList + "<img src=\"https://img.icons8.com/cotton/30/000000/calendar-27--v3.png\"/>";
+            var portalList = "";
+            var monthlyReportList = "";
+            if ((pcCount + serverCount) > 0) {
+                monthlyReportList = "<img src=\"https://img.icons8.com/cotton/70/000000/calendar-27--v3.png\"/>";
+                portalList = "<img src=\"https://img.icons8.com/cotton/70/000000/new-window.png\"/>";
             }
             document.getElementById("monthlyReport").innerHTML = monthlyReportList;
-
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
+            document.getElementById("clientPortal").innerHTML = portalList;
 
             document.getElementById("pcAntiVirusName").innerHTML = "PC - ANITIVIRUS";
 
@@ -1584,10 +1605,18 @@
 
             document.getElementById("pcMonAndAlertPrice").innerHTML = pcMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function minusServer() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#servers").val(parseInt($("#servers").val()) - 1);
             var serverCount = parseInt($('#servers').val());
             var serverAntiVirousPrice = 6;
@@ -1631,6 +1660,10 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("serverTotalCount").innerHTML = serverCount;
+
             var serverIconList = "", i;
             for (i = 1; i <= serverCount; i++) {
                 serverIconList = serverIconList + "<img src=\"https://img.icons8.com/cotton/25/000000/server.png\"/>";
@@ -1649,36 +1682,20 @@
             }
             document.getElementById("serverMonAndAlert").innerHTML = monAndAlertIconList;
 
-            var portalList = "", y;
-            for (y = 1; y <= (pcCount + serverCount); y++) {
-                portalList = portalList + "<img src=\"https://img.icons8.com/cotton/30/000000/new-window.png\"/>";
-            }
-            document.getElementById("clientPortal").innerHTML = portalList;
-
-            var monthlyReportList = "", z;
-            for (z = 1; z <= (pcCount + serverCount); z++) {
-                monthlyReportList = monthlyReportList + "<img src=\"https://img.icons8.com/cotton/30/000000/calendar-27--v3.png\"/>";
+            var portalList = "";
+            var monthlyReportList = "";
+            if ((pcCount + serverCount) > 0) {
+                monthlyReportList = "<img src=\"https://img.icons8.com/cotton/70/000000/calendar-27--v3.png\"/>";
+                portalList = "<img src=\"https://img.icons8.com/cotton/70/000000/new-window.png\"/>";
             }
             document.getElementById("monthlyReport").innerHTML = monthlyReportList;
+            document.getElementById("clientPortal").innerHTML = portalList;
 
             var backupList = "", a;
             for (a = 1; a <= serverCount; a++) {
                 backupList = backupList + "<img src=\"https://img.icons8.com/cotton/30/000000/cloud-storage.png\"/>";
             }
             document.getElementById("serverBackup").innerHTML = backupList;
-
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
 
             document.getElementById("serverBackupName").innerHTML = "SERVER - BACKUP";
 
@@ -1692,10 +1709,18 @@
 
             document.getElementById("serverMonAndAlertPrice").innerHTML = serverMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function plusServer() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#servers").val(parseInt($("#servers").val()) + 1);
             var serverCount = parseInt($('#servers').val());
             var serverAntiVirousPrice = 6;
@@ -1739,6 +1764,10 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("serverTotalCount").innerHTML = serverCount;
+
             var serverIconList = "", i;
             for (i = 1; i <= serverCount; i++) {
                 serverIconList = serverIconList + "<img src=\"https://img.icons8.com/cotton/25/000000/server.png\"/>";
@@ -1757,36 +1786,20 @@
             }
             document.getElementById("serverMonAndAlert").innerHTML = monAndAlertIconList;
 
-            var portalList = "", y;
-            for (y = 1; y <= (pcCount + serverCount); y++) {
-                portalList = portalList + "<img src=\"https://img.icons8.com/cotton/30/000000/new-window.png\"/>";
-            }
-            document.getElementById("clientPortal").innerHTML = portalList;
-
-            var monthlyReportList = "", z;
-            for (z = 1; z <= (pcCount + serverCount); z++) {
-                monthlyReportList = monthlyReportList + "<img src=\"https://img.icons8.com/cotton/30/000000/calendar-27--v3.png\"/>";
+            var portalList = "";
+            var monthlyReportList = "";
+            if ((pcCount + serverCount) > 0) {
+                monthlyReportList = "<img src=\"https://img.icons8.com/cotton/70/000000/calendar-27--v3.png\"/>";
+                portalList = "<img src=\"https://img.icons8.com/cotton/70/000000/new-window.png\"/>";
             }
             document.getElementById("monthlyReport").innerHTML = monthlyReportList;
+            document.getElementById("clientPortal").innerHTML = portalList;
 
             var backupList = "", a;
             for (a = 1; a <= serverCount; a++) {
                 backupList = backupList + "<img src=\"https://img.icons8.com/cotton/30/000000/cloud-storage.png\"/>";
             }
             document.getElementById("serverBackup").innerHTML = backupList;
-
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
 
             document.getElementById("serverBackupName").innerHTML = "SERVER - BACKUP";
 
@@ -1800,10 +1813,18 @@
 
             document.getElementById("serverMonAndAlertPrice").innerHTML = serverMonAndAlertTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function minusPcContinuty() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#pcContinuty").val(parseInt($("#pcContinuty").val()) - 1);
             var pcContinutyCount = parseInt($('#pcContinuty').val());
             var pcContinutyPrice = 15;
@@ -1847,6 +1868,10 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("pcContinutyTotalCount").innerHTML = pcContinutyCount;
+
             var pcContinutyIconList = "", i;
             for (i = 1; i <= pcContinutyCount; i++) {
                 pcContinutyIconList = pcContinutyIconList + "<img src=\"https://img.icons8.com/cotton/30/000000/cloud-computing.png\"/>";
@@ -1857,10 +1882,18 @@
 
             document.getElementById("pcContinutyPrice").innerHTML = pcContinutyCountTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function plusPcContinuty() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#pcContinuty").val(parseInt($("#pcContinuty").val()) + 1);
             var pcContinutyCount = parseInt($('#pcContinuty').val());
             var pcContinutyPrice = 15;
@@ -1904,38 +1937,33 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("pcContinutyTotalCount").innerHTML = pcContinutyCount;
+
             var pcContinutyIconList = "", i;
             for (i = 1; i <= pcContinutyCount; i++) {
                 pcContinutyIconList = pcContinutyIconList + "<img src=\"https://img.icons8.com/cotton/30/000000/cloud-computing.png\"/>";
             }
             document.getElementById("pcContinutyCount").innerHTML = pcContinutyIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("pcContinutyName").innerHTML = "PC BUSINES CONTINUITY";
 
             document.getElementById("pcContinutyPrice").innerHTML = pcContinutyCountTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function minusItStandardSupport() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#itStandardSupport").val(parseInt($("#itStandardSupport").val()) - 1);
-            var itStandardSupportCount = parseInt($('#itStandardSupport').val());
-            var itStandardSupportPrice = 45;
-
-            var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
 
             var desktopCount = parseInt($('#desktops').val());
             var laptopCount = parseInt($('#laptops').val());
@@ -1957,6 +1985,11 @@
             var pcContinutyPrice = 15;
 
             var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
+
+            var itStandardSupportCount = parseInt($('#itStandardSupport').val());
+            var itStandardSupportPrice = 45;
+
+            var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
 
             var itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
             var itEnhancedSupportPrice = 55;
@@ -1970,6 +2003,10 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice;
 
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("itStandardSupportTotalCount").innerHTML = itStandardSupportCount;
+
             var itStandardSupportIconList = "", i;
 
             for (i = 1; i <= itStandardSupportCount; i++) {
@@ -1977,32 +2014,23 @@
             }
             document.getElementById("itStandardSupportCount").innerHTML = itStandardSupportIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("itStandardSupportName").innerHTML = "IT STANDARD SUPPORT";
 
             document.getElementById("itStandardSupportPrice").innerHTML = itStandardSupportTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function plusItStandardSupport() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#itStandardSupport").val(parseInt($("#itStandardSupport").val()) + 1);
-            var itStandardSupportCount = parseInt($('#itStandardSupport').val());
-            var itStandardSupportPrice = 45;
-
-            var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
 
             var desktopCount = parseInt($('#desktops').val());
             var laptopCount = parseInt($('#laptops').val());
@@ -2025,6 +2053,11 @@
 
             var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
 
+            var itStandardSupportCount = parseInt($('#itStandardSupport').val());
+            var itStandardSupportPrice = 45;
+
+            var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
+
             var itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
             var itEnhancedSupportPrice = 55;
 
@@ -2040,6 +2073,10 @@
             var backUpTotalPrice = serverCount * backUpPrice;
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
+
+            var totalCostWithFee = totalCost + onboardingFee;
+
+            document.getElementById("itStandardSupportTotalCount").innerHTML = itStandardSupportCount;
 
             var itStandardSupportIconList = "", i;
 
@@ -2048,32 +2085,23 @@
             }
             document.getElementById("itStandardSupportCount").innerHTML = itStandardSupportIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("itStandardSupportName").innerHTML = "IT STANDARD SUPPORT";
 
             document.getElementById("itStandardSupportPrice").innerHTML = itStandardSupportTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function minusItEnhancedSupport() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#itEnhancedSupport").val(parseInt($("#itEnhancedSupport").val()) - 1);
-            var itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
-            var itEnhancedSupportPrice = 55;
-
-            var itEnhancedSupportTotalPrice = itEnhancedSupportCount * itEnhancedSupportPrice;
 
             var desktopCount = parseInt($('#desktops').val());
             var laptopCount = parseInt($('#laptops').val());
@@ -2101,6 +2129,11 @@
 
             var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
 
+            var itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
+            var itEnhancedSupportPrice = 55;
+
+            var itEnhancedSupportTotalPrice = itEnhancedSupportCount * itEnhancedSupportPrice;
+
             var officeCount = parseInt($('#office').val());
             var officePrice = 12;
 
@@ -2112,39 +2145,33 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-            var itEnhancedSupportIconList = "", i;
+            var totalCostWithFee = totalCost + onboardingFee;
 
+            document.getElementById("itEnhancedSupportTotalCount").innerHTML = itEnhancedSupportCount;
+
+            var itEnhancedSupportIconList = "", i;
             for (i = 1; i <= itEnhancedSupportCount; i++) {
                 itEnhancedSupportIconList = itEnhancedSupportIconList + "<img src=\"https://img.icons8.com/cotton/30/000000/talk.png\"/>";
             }
             document.getElementById("itEnhancedSupportCount").innerHTML = itEnhancedSupportIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("itEnhancedSupportName").innerHTML = "IT ENHANCED SUPPORT";
 
             document.getElementById("itEnhancedSupportPrice").innerHTML = itEnhancedSupportTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function plusItEnhancedSupport() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#itEnhancedSupport").val(parseInt($("#itEnhancedSupport").val()) + 1);
-            var itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
-            var itEnhancedSupportPrice = 55;
-
-            var itEnhancedSupportTotalPrice = itEnhancedSupportCount * itEnhancedSupportPrice;
 
             var desktopCount = parseInt($('#desktops').val());
             var laptopCount = parseInt($('#laptops').val());
@@ -2172,6 +2199,11 @@
 
             var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
 
+            var itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
+            var itEnhancedSupportPrice = 55;
+
+            var itEnhancedSupportTotalPrice = itEnhancedSupportCount * itEnhancedSupportPrice;
+
             var officeCount = parseInt($('#office').val());
             var officePrice = 12;
 
@@ -2183,34 +2215,32 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-            var itEnhancedSupportIconList = "", i;
+            var totalCostWithFee = totalCost + onboardingFee;
 
+            document.getElementById("itEnhancedSupportTotalCount").innerHTML = itEnhancedSupportCount;
+
+            var itEnhancedSupportIconList = "", i;
             for (i = 1; i <= itEnhancedSupportCount; i++) {
                 itEnhancedSupportIconList = itEnhancedSupportIconList + "<img src=\"https://img.icons8.com/cotton/30/000000/talk.png\"/>";
             }
             document.getElementById("itEnhancedSupportCount").innerHTML = itEnhancedSupportIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("itEnhancedSupportName").innerHTML = "IT ENHANCED SUPPORT";
 
             document.getElementById("itEnhancedSupportPrice").innerHTML = itEnhancedSupportTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function minusOffice() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#office").val(parseInt($("#office").val()) - 1);
             var officeCount = parseInt($('#office').val());
             var officePrice = 12;
@@ -2254,34 +2284,32 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-            var officeIconList = "", i;
+            var totalCostWithFee = totalCost + onboardingFee;
 
+            document.getElementById("officeTotalCount").innerHTML = officeCount;
+
+            var officeIconList = "", i;
             for (i = 1; i <= officeCount; i++) {
                 officeIconList = officeIconList + "<img src=\"https://img.icons8.com/color/30/000000/office-365.png\"/>";
             }
             document.getElementById("officeCount").innerHTML = officeIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("officeName").innerHTML = "OFFICE 365";
 
             document.getElementById("officePrice").innerHTML = officeTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function plusOffice() {
+            // document.getElementById("costName").style.display = "block";
+            // document.getElementById("onboardingFeeName").style.display = "block";
+            // document.getElementById("plusSign").style.display = "block";
+            var onboardingFee = 250;
             $("#office").val(parseInt($("#office").val()) + 1);
             var officeCount = parseInt($('#office').val());
             var officePrice = 12;
@@ -2325,31 +2353,25 @@
 
             var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-            var officeIconList = "", i;
+            var totalCostWithFee = totalCost + onboardingFee;
 
+            document.getElementById("officeTotalCount").innerHTML = officeCount;
+
+            var officeIconList = "", i;
             for (i = 1; i <= officeCount; i++) {
                 officeIconList = officeIconList + "<img src=\"https://img.icons8.com/color/30/000000/office-365.png\"/>";
             }
             document.getElementById("officeCount").innerHTML = officeIconList;
 
-            $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-            $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
             document.getElementById("officeName").innerHTML = "OFFICE 365";
 
             document.getElementById("officePrice").innerHTML = officeTotalPrice + ".00";
 
-            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+            // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+            document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+            // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
         }
 
         function myFunction() {
@@ -2364,13 +2386,10 @@
 
         $('#male').change(function () {
             if ($(this).val() === 'male') {
-                $('#standard').show();
-                $('#enhanced').hide();
+                var onboardingFee = 250;
+                document.getElementById("enhanced").style.display = "none";
+                document.getElementById("standard").style.display = "block";
                 $("#itEnhancedSupport").val(parseInt(0));
-                var itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
-                var itEnhancedSupportPrice = 55;
-
-                var itEnhancedSupportTotalPrice = itEnhancedSupportCount * itEnhancedSupportPrice;
 
                 var desktopCount = parseInt($('#desktops').val());
                 var laptopCount = parseInt($('#laptops').val());
@@ -2398,6 +2417,11 @@
 
                 var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
 
+                var itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
+                var itEnhancedSupportPrice = 55;
+
+                var itEnhancedSupportTotalPrice = itEnhancedSupportCount * itEnhancedSupportPrice;
+
                 var officeCount = parseInt($('#office').val());
                 var officePrice = 12;
 
@@ -2409,43 +2433,34 @@
 
                 var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-                var itEnhancedSupportIconList = "", i;
+                var totalCostWithFee = totalCost + onboardingFee;
 
+                document.getElementById("itEnhancedSupportTotalCount").innerHTML = itEnhancedSupportCount;
+
+                var itEnhancedSupportIconList = "", i;
                 for (i = 1; i <= itEnhancedSupportCount; i++) {
                     itEnhancedSupportIconList = itEnhancedSupportIconList + "<img src=\"https://img.icons8.com/cotton/30/000000/talk.png\"/>";
                 }
                 document.getElementById("itEnhancedSupportCount").innerHTML = itEnhancedSupportIconList;
 
-                $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-                $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                    "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                    "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                    "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                    "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                    "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                    "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                    "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                    "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                    "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
                 document.getElementById("itEnhancedSupportName").innerHTML = "IT ENHANCED SUPPORT";
 
                 document.getElementById("itEnhancedSupportPrice").innerHTML = itEnhancedSupportTotalPrice + ".00";
 
-                document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+                // document.getElementById("onboardingFee").innerHTML = "£" + onboardingFee + ".00";
+
+                document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+                // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
             }
         });
 
         $('#female').change(function () {
             if ($(this).val() === 'female') {
-                $('#standard').hide();
-                $('#enhanced').show();
+                var onboardingFee = 250;
+                document.getElementById("enhanced").style.display = "block";
+                document.getElementById("standard").style.display = "none";
                 $("#itStandardSupport").val(parseInt(0));
-                var itStandardSupportCount = parseInt($('#itStandardSupport').val());
-                var itStandardSupportPrice = 45;
-
-                var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
 
                 var desktopCount = parseInt($('#desktops').val());
                 var laptopCount = parseInt($('#laptops').val());
@@ -2468,6 +2483,11 @@
 
                 var pcContinutyCountTotalPrice = pcContinutyCount * pcContinutyPrice;
 
+                var itStandardSupportCount = parseInt($('#itStandardSupport').val());
+                var itStandardSupportPrice = 45;
+
+                var itStandardSupportTotalPrice = itStandardSupportCount * itStandardSupportPrice;
+
                 var itEnhancedSupportCount = parseInt($('#itEnhancedSupport').val());
                 var itEnhancedSupportPrice = 55;
 
@@ -2484,48 +2504,40 @@
 
                 var totalCost = pcAntiVirusTotalPrice + pcMonAndAlertTotalPrice + serverAntiVirusTotalPrice + serverMonAndAlertTotalPrice + pcContinutyCountTotalPrice + itStandardSupportTotalPrice + itEnhancedSupportTotalPrice + officeTotalPrice + backUpTotalPrice;
 
-                var itStandardSupportIconList = "", i;
+                var totalCostWithFee = totalCost + onboardingFee;
 
+                document.getElementById("itStandardSupportTotalCount").innerHTML = itStandardSupportCount;
+
+                var itStandardSupportIconList = "", i;
                 for (i = 1; i <= itStandardSupportCount; i++) {
                     itStandardSupportIconList = itStandardSupportIconList + "<img src=\"https://img.icons8.com/cotton/30/000000/talk.png\"/>";
                 }
                 document.getElementById("itStandardSupportCount").innerHTML = itStandardSupportIconList;
 
-                $("#step1").val("1)DESKTOP QUANTITY - " + desktopCount + " 2)LAPTOP QUANTITY - " + laptopCount + " 3)SERVER QUANTITY - " + serverCount);
-
-                $("#priceDetails").val("1)PC - ANITIVIRUS = " + pcCount + "(quantity) " + pcAntiVirusTotalPrice + ".00  " +
-                    "2)PC - MONITORING & ALERT = " + pcCount + "(quantity) " + pcMonAndAlertTotalPrice + ".00   " +
-                    "3)SERVER - ANITIVIRUS = " + serverCount + "(quantity) " + serverAntiVirusTotalPrice + ".00     " +
-                    "4)SERVER - MONITORING & ALERT = " + serverCount + "(quantity) " + serverMonAndAlertTotalPrice + ".00   " +
-                    "5)SERVER - BACKUPS = " + serverCount + "(quantity) " + backUpTotalPrice + ".00     " +
-                    "6)PC BUSINES CONTINUTY = " + pcContinutyCount + "(quantity) " + pcContinutyCountTotalPrice + ".00   " +
-                    "7)IT STANDARD SUPPORT = " + itStandardSupportCount + "(quantity) " + itStandardSupportTotalPrice + ".00   " +
-                    "8)IT ENHANCED SUPPORT = " + itEnhancedSupportCount + "(quantity) " + itEnhancedSupportTotalPrice + ".00   " +
-                    "9)MICROSOFT 365 = " + officeCount + "(quantity) " + officeTotalPrice + ".00    " +
-                    "<------ TOTAL COST = " + "£" + totalCost + ".00 ------>");
-
                 document.getElementById("itStandardSupportName").innerHTML = "IT STANDARD SUPPORT";
 
                 document.getElementById("itStandardSupportPrice").innerHTML = itStandardSupportTotalPrice + ".00";
 
-                document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00";
+                document.getElementById("totalCost").innerHTML = "£" + totalCost + ".00*\"";
+
+                // document.getElementById("totalCostWithFee").innerHTML = "£" + totalCostWithFee + ".00";
             }
         });
 
         $('#itNo').change(function () {
             if ($(this).val() === 'no') {
-                $('#itProvderName').hide();
-                $('#giveProvderName').hide();
+                document.getElementById("itProvderName").style.display = "none";
+                document.getElementById("giveProvderName").style.display = "none";
+                document.getElementById("itProviderName").value = '';
             }
         });
 
         $('#itYes').change(function () {
             if ($(this).val() === 'yes') {
-                $('#itProvderName').show();
-                $('#giveProvderName').show();
+                document.getElementById("itProvderName").style.display = "block";
+                document.getElementById("giveProvderName").style.display = "block";
             }
         });
-
     </script>
 </body>
 
